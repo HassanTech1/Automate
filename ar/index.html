@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ubertrix" />
+    <meta property="og:title" content="Ubertrix" />
+    <meta
+      property="og:description"
+      content="مرحباً بك في ubertrix - شريكك لحلول الذكاء الاصطناعي المبتكرة"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:alt" content="Ubertrix" />
+    <title>Ubertrix</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/fav/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <style>
+      @media (min-width: 2240px) {
+        .nav_items li a {
+          font-size: 0.85vw !important;
+        }
+        .nav_media p {
+          font-size: 0.85vw !important;
+        }
+        .nav_lang p a {
+          font-size: 0.85vw;
+        }
+      }
+
+      .nav_lang p a {
+        color: white;
+      }
+
+      .nav_wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .nav_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 100px;
+        background-color: transparent;
+        z-index: 10;
+      }
+
+      .nav_logo {
+        max-width: 51.267px;
+        max-height: 44px;
+      }
+
+      .nav_logo svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nav_items {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 14px;
+
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+        -webkit-backdrop-filter: blur(27px);
+        /*change on responsive*/
+        margin-left: 100px;
+      }
+
+      .nav_items li {
+        list-style-type: none;
+      }
+
+      .nav_items li a {
+        text-decoration: none;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: #6d6d6d;
+      }
+
+      .nav_media-lang {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav_media {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3px;
+
+        text-decoration: none;
+      }
+
+      @keyframes colorChange {
+        0% {
+          fill: #d4af08;
+        }
+
+        50% {
+          fill: #2a2a2a;
+        }
+
+        100% {
+          fill: #d4af08;
+        }
+      }
+
+      .nav_media svg circle {
+        animation: colorChange 2s infinite;
+      }
+
+      .nav_media svg rect {
+        animation: colorChange 2s infinite 1s;
+      }
+
+      .nav_media p {
+        color: #6d6d6d;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .nav_lang {
+        padding: 12px 9px;
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .nav_lang p {
+        color: #c0c0c0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .language-text {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+
+      .english.active,
+      .armenian.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .english.inactive {
+        transform: translateX(-150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      .armenian.inactive {
+        transform: translateX(150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+
+      .o-hidden {
+        overflow: hidden;
+      }
+
+      .menu_mobile {
+        display: none;
+      }
+
+      @media (max-width: 1920px) {
+        .nav_container {
+          padding: 1vw 5.2vw;
+        }
+
+        .nav_items {
+          margin-left: 5.2vw;
+          gap: 0.78vw;
+          padding: 0.6vw 0.7vw 0.6vw 0.7vw;
+          border-radius: 0.7vw;
+        }
+
+        .nav_lang {
+          padding: 0.6vw 0.4vw;
+          border-radius: 0.78vw;
+        }
+
+        .nav_logo {
+          max-width: 2.6vw;
+          max-height: 2.2vw;
+        }
+
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 0.9vw;
+        }
+
+        .nav_media svg {
+          width: 1.8vw;
+          height: 0.8vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 1366px) {
+        .nav_container .nav_items {
+          padding: 0.1vw 0.7vw 0.4vw 0.7vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 835px) {
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 1.2vw;
+        }
+
+        .nav_items {
+          margin-left: 8.5vw;
+        }
+      }
+
+      @media (orientation: landscape) and (min-width: 600px) and (max-width: 1024px) {
+        .nav_items li {
+          display: flex;
+        }
+      }
+
+      .menu-ul {
+        display: none;
+      }
+
+      @media (max-width: 743px) {
+        .nav_wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 10;
+          height: 12.8vw;
+        }
+
+        .nav_container {
+          display: none;
+        }
+
+        .menu_mobile {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 3.1vw 4.8vw;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          position: relative;
+          z-index: 999;
+        }
+
+        .nav_logo {
+          max-width: 7.9vw;
+          max-height: 6.7vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 8.4vw;
+          height: 4vw;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        .hamburger span {
+          display: block;
+          height: 0.2vw;
+          width: 100%;
+          background: white;
+          transition: all 0.5s ease;
+        }
+
+        .hamburger.active span:first-child {
+          transform: rotate(45deg) translate(0.7vw, 0.7vw);
+        }
+
+        .hamburger.active span:last-child {
+          transform: rotate(-45deg) translate(0.8vw, -0.8vw);
+        }
+
+        .menu_fullscreen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100dvh;
+          background: black;
+          z-index: 99;
+          overflow-y: auto;
+          transition: all 0.8s ease-in-out;
+          transform: translateY(-100%);
+        }
+
+        .menu_fullscreen.active {
+          transform: translateY(0);
+          transition: all 0.8s ease-in-out;
+        }
+
+        .menu-ul.active {
+          height: 100dvh;
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 0s ease-in-out, opacity 0.8s ease-in-out,
+            height 0s ease-in-out;
+        }
+
+        .menu-ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+          z-index: 99;
+          opacity: 0;
+          transform: translateY(-200%);
+          transition: transform 0s ease-in-out 0.8s, opacity 0.8s ease-in-out,
+            height 0s ease-in-out 0.8s;
+          height: 100dvh;
+        }
+
+        .menu-ul ul {
+          list-style-type: none;
+          margin: 13vh 7.2vw 8.2vw 7.2vw;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1.2vw;
+
+          border-bottom: 1px solid #2a2a2a;
+          border-radius: 0;
+
+          height: -webkit-fill-available;
+        }
+
+        .menu-ul li {
+          transform: translateX(20px);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul.active li {
+          transform: translateX(0);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul li a {
+          color: #6d6d6d;
+          text-decoration: none;
+          font-size: 7.7vw;
+        }
+
+        .nav_media-lang {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: unset;
+
+          margin: 0 7.2vw 15.7vw 7.2vw;
+        }
+
+        .nav_media {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 2.4vw;
+
+          text-decoration: none;
+        }
+
+        .nav_media svg circle {
+          animation: colorChange 2s infinite;
+        }
+
+        .nav_media svg rect {
+          animation: colorChange 2s infinite 1s;
+        }
+
+        .nav_media p {
+          color: #6d6d6d;
+          font-size: 7.7vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_lang {
+          padding: 2.8vw 2.1vw;
+          border-radius: 3.6vw;
+          border: 1px solid #2a2a2a;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          cursor: pointer;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .nav_lang p {
+          color: #c0c0c0;
+          font-size: 3.8vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_items li a,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 3.8vw;
+        }
+
+        .nav_media svg {
+          width: 8.4vw;
+          height: 3.8vw;
+        }
+      }
+
+      .loader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        z-index: 999999999;
+        background-color: black;
+        overflow: visible;
+      }
+
+      .loader .wrapper-preloader {
+        width: 146px;
+        height: 128px;
+        z-index: 99999999;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(47 47 47 / 35%);
+      }
+
+      .loader .wrapper-preloader img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-orange {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #d4af08;
+        width: 0;
+        height: 127px;
+        display: block;
+        animation: progressAnimation 8s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        50% {
+          width: 152px;
+        }
+
+        100% {
+          width: 0;
+        }
+      }
+
+      .click_here {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .success_click_here {
+        color: #7c7c7c !important;
+        text-decoration: none !important;
+      }
+      .am-header .nav_media p,
+      .am-header .nav_items li a {
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="wrapper-preloader">
+        <div class="bg-orange"></div>
+        <img src="../assets/loader.png" alt="" />
+      </div>
+    </div>
+    <script>
+      //start preloader function
+      document.body.classList.add("o-hidden");
+      if (window.location.pathname == "/ba") {
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            document.body.classList.remove("o-hidden");
+            document.querySelector(".loader").style.display = "none";
+          }, 2000);
+        });
+      } else {
+        window.onload = function () {
+          document.body.classList.remove("o-hidden");
+          document.querySelector(".loader").style.display = "none";
+        };
+      }
+      // end preloader function
+    </script>
+    <div class="nav_wrapper">
+      <div class="nav_container">
+        <div class="nav_logo">
+         <img src="../assets/logo.png" width="70" height="50"/>
+        </div>
+
+        <ul class="nav_items">
+          <li id="home">
+            <a href="#">الصفحة الرئيسية</a>
+          </li>
+          <li id="about">
+            <a href="#">نبذة عن</a>
+          </li>
+          <li id="ba">
+            <a href="#">منتجاتنا</a>
+          </li>
+          <li id="investors">
+            <a href="#">الوكلاء</a>
+          </li>
+          <li id="cr">
+            <a href="#">مجالات العمل</a>
+          </li>
+          <li id="contacts">
+            <a href="#">جهات الاتصال</a>
+          </li>
+        </ul>
+
+        <div class="nav_media-lang">
+          <a href="#" class="nav_media">
+            <p> الإعلام</p>
+            <svg
+              width="35"
+              height="16"
+              viewBox="0 0 35 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="27" cy="8" r="8" fill="#FF511B" />
+              <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+            </svg>
+          </a>
+
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="../index.html">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="../index.html">ِEng</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu_mobile">
+        <div class="nav_logo">
+         <img src="../assets/logo.png" width="70" height="50"/>
+        </div>
+        <button class="hamburger" onclick="toggleMenu(this)">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="menu_fullscreen" id="menuFullscreen"></div>
+
+      <div class="menu-ul">
+        <ul>
+          <li id="home">
+            <a href="#">الصفحة الرئيسية</a>
+          </li>
+          <li id="about">
+            <a href="#">نبذة عن</a>
+          </li>
+          <li id="ba">
+            <a href="#">منتجاتنا</a>
+          </li>
+          <li id="investors">
+            <a href="#">الوكلاء</a>
+          </li>
+          <li id="cr">
+            <a href="#">مجالات العمل</a>
+          </li>
+          <li id="contacts">
+            <a href="#">جهة التواصل</a>
+          </li>
+          <li>
+            <a href="#" class="nav_media">
+              <p>الإعلام</p>
+              <svg
+                width="35"
+                height="16"
+                viewBox="0 0 35 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="27" cy="8" r="8" fill="#FF511B" />
+                <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="nav_media-lang">
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="../index.html">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="../index.html">Eng</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu(element) {
+        element.classList.toggle("active");
+        var menu = document.getElementById("menuFullscreen");
+        var menuList = document.querySelector(".menu-ul");
+        if (element.classList.contains("active")) {
+          menu.classList.add("active");
+          menuList.classList.add("active");
+        } else {
+          menu.classList.remove("active");
+          menuList.classList.remove("active");
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <style>
+      .id_leasing_logo {
+        width: 176px;
+      }
+
+      .brands-arrows {
+        width: max-content;
+        height: 75%;
+        position: absolute;
+        top: 9.1vh;
+        right: 4vh;
+        z-index: 9999;
+        display: flex;
+      }
+
+      .brands-arrows svg {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: block;
+      }
+
+      .brands-arrows svg.arrow-prev {
+        transform: rotate(-180deg);
+      }
+
+      .brands-arrows svg.arrow-next {
+        margin-left: 1.5vh;
+      }
+
+      .brands-arrows svg.inactive path {
+        fill: silver;
+      }
+
+      @media (max-width: 743px) {
+        .brands-arrows {
+          display: none;
+        }
+      }
+    </style>
+    <div class="section" id="section-1">
+      <div id="canvas-wrapper">
+        <div id="canvas-container">
+          <canvas id="myCanvas" width="1200" height="1200"></canvas>
+        </div>
+      </div>
+      <div class="main-text-1">
+        <h1>أوبرتريكس للذكاء الاصطناعي</h1>
+      </div>
+      <div class="main-text-2">
+        <h1>تيربو</h1>
+      </div>
+
+      <p id="main-description">مجموعة من الشركات الرائدة في مجال الذكاء الاصطناعي</p>
+    </div>
+
+    <div id="section-2">
+      <!--about container-->
+      <div class="about-container section">
+        <div class="about-card transact">
+          <h3>نبذة عنا</h3>
+          <div class="about-card_description">
+            <h1>
+              مرحباً بك في أوبرتريكس شريكك لحلول الذكاء الاصطناعي المبتكرة
+            </h1>
+            <span>ريادة الابتكار والاستفادة من الذكاء الاصطناعي</span>
+          </div>
+          <div class="about-card_foot">
+            <img src="../assets/logo_ww.png" alt="IDGroup" />
+          </div>
+        </div>
+        <div class="about-card innovate">
+          <h3>المعلومات</h3>
+          <div class="about-card_description">
+            <p>
+              نحن شركة تكنولوجية متخصصة في تطوير الأنظمة الذكية وحلول الذكاء الاصطناعي، حيث نقدم حلولاً متكاملة تهدف إلى تمكين المؤسسات من التحول الرقمي وتحقيق أعلى مستويات الكفاءة والأمان.
+              نحن نساعد الشركات على تحسين عملياتها التشغيلية واتخاذ قرارات قائمة على البيانات وتعزيز الإنتاجية من خلال أنظمة ذكية متقدمة. ....
+            </p>
+          </div>
+          <a class="about-card_foot">
+            <img
+              src="../assets/img/about-card_foot(2).svg"
+              class="plus-img"
+              alt="IDGroup"
+            />
+            <p>See more</p>
+          </a>
+        </div>
+      </div>
+      <!--brands-->
+      <div class="brands-container section">
+        <div class="brands-description">
+          <h2 class="">منتجاتنا</h2>
+          <p class="">
+            منتجاتنا نحن فخورون بمنتجاتنا الذكية </p>
+          <div id="brands-description_icon">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1953 8.5C16.1953 12.7891 12.6484 16.3359 8.35937 16.3359C4.0625 16.3359 0.523437 12.7969 0.523437 8.50781C0.523437 4.21094 4.0625 0.664062 8.35937 0.664062C12.6484 0.664062 16.1953 4.21094 16.1953 8.5ZM15.1797 8.5C15.1797 4.71875 12.1328 1.67187 8.35937 1.67187C4.57812 1.67187 1.53125 4.72656 1.53125 8.50781C1.53125 12.2812 4.57812 15.3203 8.35937 15.3203C12.1328 15.3203 15.1797 12.2812 15.1797 8.5ZM4.42969 8.5C4.42969 8.22656 4.61719 8.03906 4.89062 8.03906L9.42187 8.03906L10.8672 8.08594L9.89844 7.21875L8.76562 6.09375C8.67969 6.00781 8.63281 5.90625 8.63281 5.77344C8.63281 5.52344 8.82031 5.32812 9.0625 5.32812C9.19531 5.32812 9.29687 5.375 9.38281 5.45312L12.0625 8.14844C12.1797 8.25781 12.2344 8.36719 12.2344 8.5C12.2344 8.625 12.1797 8.72656 12.0625 8.84375L9.38281 11.5391C9.29687 11.6172 9.19531 11.6562 9.0625 11.6562C8.82031 11.6562 8.63281 11.4687 8.63281 11.2187C8.63281 11.0859 8.67969 10.9844 8.76562 10.8984L9.89844 9.77344L10.8594 8.91406L9.42187 8.95312L4.89062 8.95312C4.61719 8.95312 4.42969 8.76562 4.42969 8.5Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="brands-cards">
+         <!-- <div class="brands-arrows">
+            <svg
+              class="arrow-prev inactive"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1953 8.5C16.1953 12.7891 12.6484 16.3359 8.35937 16.3359C4.0625 16.3359 0.523437 12.7969 0.523437 8.50781C0.523437 4.21094 4.0625 0.664062 8.35937 0.664062C12.6484 0.664062 16.1953 4.21094 16.1953 8.5ZM15.1797 8.5C15.1797 4.71875 12.1328 1.67187 8.35937 1.67187C4.57812 1.67187 1.53125 4.72656 1.53125 8.50781C1.53125 12.2812 4.57812 15.3203 8.35937 15.3203C12.1328 15.3203 15.1797 12.2812 15.1797 8.5ZM4.42969 8.5C4.42969 8.22656 4.61719 8.03906 4.89062 8.03906L9.42187 8.03906L10.8672 8.08594L9.89844 7.21875L8.76562 6.09375C8.67969 6.00781 8.63281 5.90625 8.63281 5.77344C8.63281 5.52344 8.82031 5.32812 9.0625 5.32812C9.19531 5.32812 9.29687 5.375 9.38281 5.45312L12.0625 8.14844C12.1797 8.25781 12.2344 8.36719 12.2344 8.5C12.2344 8.625 12.1797 8.72656 12.0625 8.84375L9.38281 11.5391C9.29687 11.6172 9.19531 11.6562 9.0625 11.6562C8.82031 11.6562 8.63281 11.4687 8.63281 11.2187C8.63281 11.0859 8.67969 10.9844 8.76562 10.8984L9.89844 9.77344L10.8594 8.91406L9.42187 8.95312L4.89062 8.95312C4.61719 8.95312 4.42969 8.76562 4.42969 8.5Z"
+                fill="#FF511B"
+              />
+            </svg>
+            <svg
+              class="arrow-next"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1953 8.5C16.1953 12.7891 12.6484 16.3359 8.35937 16.3359C4.0625 16.3359 0.523437 12.7969 0.523437 8.50781C0.523437 4.21094 4.0625 0.664062 8.35937 0.664062C12.6484 0.664062 16.1953 4.21094 16.1953 8.5ZM15.1797 8.5C15.1797 4.71875 12.1328 1.67187 8.35937 1.67187C4.57812 1.67187 1.53125 4.72656 1.53125 8.50781C1.53125 12.2812 4.57812 15.3203 8.35937 15.3203C12.1328 15.3203 15.1797 12.2812 15.1797 8.5ZM4.42969 8.5C4.42969 8.22656 4.61719 8.03906 4.89062 8.03906L9.42187 8.03906L10.8672 8.08594L9.89844 7.21875L8.76562 6.09375C8.67969 6.00781 8.63281 5.90625 8.63281 5.77344C8.63281 5.52344 8.82031 5.32812 9.0625 5.32812C9.19531 5.32812 9.29687 5.375 9.38281 5.45312L12.0625 8.14844C12.1797 8.25781 12.2344 8.36719 12.2344 8.5C12.2344 8.625 12.1797 8.72656 12.0625 8.84375L9.38281 11.5391C9.29687 11.6172 9.19531 11.6562 9.0625 11.6562C8.82031 11.6562 8.63281 11.4687 8.63281 11.2187C8.63281 11.0859 8.67969 10.9844 8.76562 10.8984L9.89844 9.77344L10.8594 8.91406L9.42187 8.95312L4.89062 8.95312C4.61719 8.95312 4.42969 8.76562 4.42969 8.5Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </div>-->
+
+         <!--- <div class="brands-card_container">
+            <div class="brands-card" data-id="brand1">
+              <div class="brands-card_image">
+                <svg
+                  id="_Слой_1"
+                  data-name="Слой 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320.38 331.72"
+                >
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #515151;
+                        stroke-width: 0px;
+                      }
+                    </style>
+                  </defs>
+                  <path
+                    class="cls-1"
+                    d="m2.45,125.25h-.02v2h.02v-2Zm1,14.76v-13.76H1.45v13.76h2Zm9.77,10.5c-3.56,0-5.95-1.01-7.46-2.72-1.53-1.72-2.32-4.32-2.31-7.79h-2c0,3.73.83,6.89,2.82,9.11,2,2.25,5.01,3.39,8.96,3.39v-2Zm9.65-10.74c-.11,3.44-.84,6.1-2.31,7.89-1.44,1.75-3.73,2.83-7.34,2.84v2c4.04,0,6.96-1.24,8.88-3.57,1.88-2.29,2.66-5.47,2.77-9.1l-2-.06Zm1.45-29.23c-1.1,9.7-1.14,19.54-1.45,29.23l2,.06c.31-9.77.35-19.48,1.43-29.07l-1.99-.23ZM140.21,24.26C85.98,15.05,30.53,56.02,24.32,110.55l1.99.23c6.08-53.37,60.45-93.56,113.57-84.54l.33-1.97Zm47.58,20.13c-14.79-8.87-29.92-17.12-47.58-20.13l-.34,1.97c17.27,2.94,32.11,11.02,46.89,19.87l1.03-1.72Zm15.06-2.16c-1.81,3.15-4.07,4.5-6.53,4.72-2.53.23-5.46-.72-8.53-2.56l-1.03,1.72c3.25,1.95,6.61,3.12,9.74,2.84,3.21-.29,6.01-2.1,8.08-5.71l-1.73-1Zm-3.68-15.34c2.93,1.98,4.62,4.43,5.21,7.03.59,2.6.1,5.47-1.53,8.3l1.73,1c1.84-3.2,2.46-6.57,1.74-9.74-.72-3.17-2.76-6.03-6.04-8.25l-1.12,1.66ZM130.97,2.12c25.2,1.19,47.5,10.82,68.2,24.77l1.12-1.66C179.39,11.15,156.74,1.34,131.07.13l-.09,2ZM3.43,126.22C1.39,47.45,68.99-.79,130.97,2.12l.09-2C68.13-2.83-.65,46.14,1.43,126.28l2-.05Zm96.41,5.82v.04h2v-.04h-2Zm2,9.44c-.07-3.14,0-6.25,0-9.44h-2c0,3.12-.07,6.32,0,9.49l2-.05Zm9.78,10.05c-2.95,0-5.32-.94-6.98-2.6-1.66-1.67-2.71-4.16-2.79-7.45l-2,.05c.1,3.69,1.28,6.71,3.38,8.81,2.1,2.1,5.02,3.19,8.4,3.19v-2Zm9.54-10.11c.03,3.35-.95,5.86-2.57,7.52-1.62,1.66-4,2.59-6.97,2.59v2c3.39,0,6.32-1.07,8.4-3.2,2.07-2.12,3.18-5.18,3.14-8.94l-2,.02Zm.07-5.21c-.07,1.73-.09,3.49-.07,5.21l2-.02c-.02-1.7,0-3.41.07-5.11l-2-.09Zm13.68-7.35c-2.27-1.3-4.21-2.22-5.86-2.68-1.65-.46-3.14-.49-4.4.19-1.26.68-2.04,1.95-2.54,3.56-.5,1.61-.76,3.71-.87,6.28l2,.09c.11-2.51.36-4.41.79-5.78.42-1.37.97-2.07,1.58-2.39.61-.33,1.51-.41,2.92-.02,1.41.39,3.18,1.21,5.4,2.49l1-1.73Zm51.44,29.85c-17.1-10.01-34.24-19.98-51.44-29.85l-1,1.73c17.19,9.86,34.32,19.83,51.42,29.84l1.01-1.73Zm.27,15.45c2.4-1.41,4.27-2.65,5.55-3.83,1.26-1.17,2.1-2.43,2.07-3.87-.03-1.43-.91-2.68-2.21-3.86-1.31-1.19-3.23-2.46-5.69-3.9l-1.01,1.73c2.44,1.43,4.2,2.61,5.35,3.65,1.17,1.06,1.54,1.83,1.55,2.42.01.58-.32,1.33-1.43,2.36-1.1,1.02-2.81,2.18-5.2,3.57l1.01,1.73Zm-46.24,26.77c15.46-8.83,30.87-17.78,46.24-26.77l-1.01-1.73c-15.37,8.99-30.77,17.94-46.23,26.76l.99,1.74Zm-19.16-10.18c.38,4.59.68,8.12,1.17,10.64.25,1.27.55,2.34.97,3.2.42.87,1,1.57,1.79,1.99.8.42,1.7.5,2.65.36.94-.14,2-.49,3.18-1,2.35-1.02,5.41-2.76,9.39-5.02l-.99-1.74c-4.02,2.29-6.97,3.96-9.19,4.92-1.11.48-1.98.76-2.67.85-.68.1-1.12.02-1.43-.15-.31-.17-.63-.49-.94-1.11-.31-.63-.57-1.51-.81-2.7-.47-2.39-.76-5.79-1.14-10.42l-1.99.17Zm-9.44-9.27c2.94.03,5.14.85,6.67,2.34,1.53,1.49,2.51,3.77,2.77,6.94l1.99-.16c-.29-3.49-1.39-6.28-3.37-8.21-1.99-1.93-4.73-2.88-8.04-2.9l-.02,2Zm-9.79,9.16c.29-2.94,1.33-5.22,2.95-6.77,1.61-1.54,3.89-2.42,6.84-2.4l.02-2c-3.38-.03-6.19,1-8.23,2.95-2.04,1.94-3.23,4.72-3.56,8.02l1.99.2Zm-.24,14.63c.27-2.49.21-5.01.14-7.45-.07-2.46-.14-4.84.09-7.19l-1.99-.2c-.24,2.49-.17,5-.1,7.44.07,2.46.12,4.84-.13,7.18l1.99.22Zm35.8,21.13c-8.61,5.1-18.11,4.71-25.17.62-7.05-4.08-11.71-11.87-10.63-21.75l-1.99-.22c-1.17,10.69,3.91,19.23,11.62,23.69,7.69,4.46,17.97,4.83,27.19-.63l-1.02-1.72Zm68.49-39.89c-22.72,13.57-45.69,26.39-68.49,39.89l1.02,1.72c22.67-13.42,45.86-26.37,68.5-39.89l-1.03-1.72Zm-.31-40.2c8.53,5.09,12.74,12.66,12.79,20.13.06,7.47-4.04,15.02-12.48,20.06l1.03,1.72c8.98-5.36,13.52-13.53,13.46-21.8-.06-8.26-4.72-16.44-13.77-21.84l-1.02,1.72Zm-69.38-40.06c23.38,12.88,46.43,26.37,69.38,40.06l1.02-1.72c-22.96-13.69-46.03-27.19-69.44-40.09l-.97,1.75Zm-16.45-2.97c5.19-.87,11.77.39,16.45,2.97l.96-1.75c-5.05-2.78-12.08-4.14-17.75-3.19l.33,1.97Zm-18.05,28.78c-.02-9.45,1.17-16.06,3.97-20.59,2.76-4.45,7.19-7.04,14.08-8.2l-.33-1.97c-7.26,1.23-12.29,4.03-15.45,9.12-3.11,5.02-4.29,12.1-4.28,21.64h2Zm-48.86,34.8l.02-.04-1.79-.89-.02.04,1.79.89Zm-2.15.55h1.26v-2h-1.26v2Zm1.11,42.87c-.53-14.6-.11-29.19-.11-43.87h-2c0,14.6-.42,29.29.11,43.94l2-.07Zm25.53,52.43c-16.73-13.25-24.74-31.3-25.53-52.44l-2,.07c.81,21.64,9.04,40.27,26.29,53.93l1.24-1.57Zm98.02-1.69c-15.72,11.05-31.96,18.01-48.37,18.94-16.38.94-33.04-4.11-49.66-17.25l-1.24,1.57c16.95,13.41,34.09,18.65,51.01,17.68,16.9-.97,33.49-8.12,49.4-19.31l-1.15-1.64Zm3.01-13.32c1.31,2.49,1.71,5,1.23,7.27-.48,2.26-1.84,4.37-4.24,6.05l1.15,1.64c2.76-1.94,4.45-4.47,5.04-7.28.59-2.8.07-5.78-1.41-8.61l-1.77.93Zm-13.7-3.54c2.73-1.21,5.44-1.7,7.8-1.22,2.31.47,4.39,1.89,5.9,4.76l1.77-.93c-1.76-3.36-4.33-5.2-7.27-5.79-2.9-.59-6.05.04-9.01,1.35l.81,1.83Zm-15.64,8.88c2.67-1.46,5.27-3.11,7.83-4.66,2.58-1.56,5.14-3.04,7.81-4.22l-.81-1.83c-2.8,1.24-5.45,2.77-8.04,4.34-2.61,1.58-5.13,3.18-7.75,4.61l.96,1.75Zm-76.54-44.37c.37,38.65,42.62,63.03,76.54,44.37l-.96-1.75c-32.62,17.95-73.22-5.52-73.58-42.63l-2,.02Zm0-85.25c-.29,28.41-.27,56.84,0,85.25l2-.02c-.27-28.4-.29-56.82,0-85.21l-2-.02Zm75.24-44.5c-33.23-18.05-74.85,6.82-75.24,44.5l2,.02c.38-36.19,40.4-60.08,72.29-42.76l.95-1.76Zm76.04,44.19c-24.83-15.55-50.29-30.2-76.04-44.19l-.95,1.76c25.73,13.98,51.14,28.61,75.94,44.13l1.06-1.7Zm.14,86.83c31.91-20.86,32.22-66.57-.14-86.83l-1.06,1.7c31.08,19.45,30.84,63.37.11,83.46l1.09,1.67Zm-15.51,9.32c2.52-1.6,5.12-3.1,7.74-4.62,2.61-1.51,5.23-3.05,7.77-4.71l-1.09-1.68c-2.49,1.62-5.07,3.14-7.68,4.65-2.6,1.51-5.24,3.03-7.8,4.66l1.07,1.69Zm-5.1,14.41c-1.67-2.53-1.99-5.06-1.17-7.44.84-2.42,2.9-4.84,6.27-6.97l-1.07-1.69c-3.6,2.28-6.05,5.01-7.09,8.01-1.05,3.03-.58,6.21,1.39,9.2l1.67-1.1Zm15.36,2.91c-3,1.58-5.87,2.32-8.43,1.96-2.52-.35-4.9-1.78-6.93-4.87l-1.67,1.1c2.29,3.49,5.15,5.31,8.33,5.76,3.14.44,6.44-.49,9.64-2.17l-.93-1.77Zm18.4-10.93c-5.86,4.04-12.08,7.61-18.4,10.93l.93,1.77c6.37-3.35,12.66-6.96,18.61-11.06l-1.13-1.65Zm1.64-116.66c40.31,27.51,38.71,88.89-1.64,116.66l1.13,1.65c41.43-28.5,43.19-91.6,1.64-119.96l-1.13,1.65Zm-86.31-49.95c29.86,14.47,58.91,31.26,86.31,49.95l1.13-1.65c-27.48-18.75-56.62-35.59-86.56-50.1l-.87,1.8Zm-99.05,53.43c6.58-46.33,56.94-73.85,99.05-53.43l.87-1.8c-43.36-21.03-95.14,7.31-101.9,54.94l1.98.28Zm-.39,53.92c0-9.02-.53-18.19-.74-27.18-.21-9.03-.11-17.97,1.13-26.73l-1.98-.28c-1.27,8.92-1.37,18-1.15,27.06.22,9.1.74,18.13.74,27.13h2Zm266.61-4.53l-.02-.02-1.41,1.41.02.02,1.41-1.41Zm-4.9-22.7c1.85,8.87,2.45,17.9,3.2,23.54l1.98-.26c-.72-5.45-1.35-14.72-3.22-23.68l-1.96.41Zm-74.22-87.04c37.2,18.59,65.41,44.71,74.22,87.04l1.96-.41c-8.98-43.14-37.77-69.67-75.28-88.42l-.89,1.79Zm-13.34,4.44c1.48-2.64,3.4-4.44,5.61-5.24,2.19-.8,4.79-.67,7.73.8l.89-1.79c-3.35-1.67-6.52-1.9-9.31-.89-2.77,1.01-5.03,3.21-6.67,6.14l1.75.98Zm3.36,12.97c-2.48-1.63-3.98-3.66-4.54-5.84-.56-2.17-.23-4.61,1.18-7.13l-1.75-.98c-1.62,2.89-2.08,5.86-1.37,8.61.71,2.75,2.57,5.16,5.38,7.01l1.1-1.67Zm19.17,11.55c-3.16-2.03-6.42-3.9-9.65-5.77-3.24-1.87-6.44-3.74-9.52-5.78l-1.1,1.67c3.14,2.08,6.39,3.98,9.62,5.85,3.24,1.87,6.46,3.72,9.57,5.72l1.08-1.68Zm.77,169.03c62.35-40.18,61.6-128.99-.77-169.03l-1.08,1.68c61.17,39.27,61.87,126.29.76,165.67l1.08,1.68Zm-82.01,47.58c28.01-14.6,55.46-30.48,82.01-47.58l-1.08-1.68c-26.5,17.07-53.89,32.91-81.85,47.48l.92,1.77ZM26.29,234.78c16.04,61.04,86.2,92.12,142.25,62.91l-.92-1.77c-54.91,28.62-123.68-1.85-139.39-61.65l-1.93.51Zm-3.82-41.87c.54,6.96.61,13.97.99,21.06.38,7.04,1.06,14.06,2.84,20.82l1.93-.51c-1.72-6.56-2.4-13.42-2.77-20.41-.37-6.95-.45-14.14-.99-21.1l-1.99.15Zm-10.26-11.73c2.99.02,5.37,1.11,7.09,3.06,1.74,1.97,2.87,4.9,3.17,8.67l1.99-.16c-.32-4.07-1.56-7.45-3.66-9.84-2.12-2.41-5.06-3.72-8.58-3.74v2Zm-10.21,11.52c-.07-3.7,1.03-6.57,2.83-8.51,1.79-1.94,4.36-3.02,7.38-3.01v-2c-3.52,0-6.63,1.27-8.85,3.65C1.16,185.21-.07,188.62,0,192.74l2-.04Zm2.19,37.48c-2.26-12.16-1.93-24.86-2.19-37.49l-2,.04c.25,12.5-.08,25.44,2.22,37.81l1.97-.37Zm179.51,83.87c-72.38,40.81-164.27-2.01-179.51-83.87l-1.97.37c15.49,83.21,108.88,126.73,182.46,85.25l-.98-1.74Zm74.42-43.29c-24.62,14.73-49.43,29.2-74.42,43.29l.98,1.74c25-14.1,49.82-28.58,74.46-43.31l-1.03-1.72Zm59.86-108.25c-1.3,49.27-20.35,84.63-59.86,108.25l1.03,1.72c40.16-24.01,59.51-60.04,60.83-109.91l-2-.05ZM2.45,126.25h1v-1h-1v1Zm0,13.76h1s0,0,0,0h-1Zm10.77,11.5v1h0v-1Zm10.65-11.7l-1-.03h0s1,.03,1,.03Zm1.44-29.15l-.99-.11h0s.99.11.99.11ZM140.04,25.25l.17-.99h0s-.17.99-.17.99Zm47.24,20l.51-.86h0s-.51.86-.51.86Zm16.44-2.52l.87.5h0s-.87-.5-.87-.5Zm-3.99-16.66l.56-.83h0s-.56.83-.56.83ZM131.02,1.13l.05-1h0s-.05,1-.05,1ZM2.43,126.25l-1,.03.03.97h.97v-1Zm98.41,15.26l-1,.02h0s1-.02,1-.02Zm21.31-.09h1s-1,0-1,0Zm.07-5.16l-1-.04h0s1,.04,1,.04Zm12.18-6.53l-.5.87h0s.5-.87.5-.87Zm51.43,29.85l-.51.86h0s.5-.86.5-.86Zm.27,13.73l-.5-.86h0s.5.86.5.86Zm-46.24,26.76l.5.87h0s-.5-.87-.5-.87Zm-17.67-9.39l-1,.08h0s1-.08,1-.08Zm-10.43-10.19v-1s0,0,0,0v1Zm-10.79,10.06l-1-.1h0s1,.1,1,.1Zm-.24,14.62l-.99-.11h0s.99.11.99.11Zm37.3,22.1l-.51-.86h0s.51.86.51.86Zm68.5-39.89l.51.86-.51-.86Zm-.31-41.91l-.51.86h0s.51-.86.51-.86Zm-69.41-40.07l.48-.88h0s-.48.88-.48.88Zm-17.1-3.08l-.17-.99h0s.17.99.17.99Zm-18.89,29.77h-1s2,0,2,0h-1Zm-48.76,34.35v1h.62l.28-.55-.89-.45Zm-1.26,0v-1h-1v1h1Zm.11,43.9l-1,.04h0s1-.04,1-.04Zm25.91,53.18l-.62.78h0s.62-.78.62-.78Zm99.22-1.66l.58.82h0s-.58-.82-.58-.82Zm3.32-14.6l-.89.46h0s.89-.46.89-.46Zm-14.99-3.99l-.4-.91h0s.41.91.41.91Zm-15.72,8.92l-.48-.88h0s.48.88.48.88Zm-75.06-43.5h1s-1,0-1,0Zm0-85.23h-1s0-.01,0-.01h1Zm73.77-43.63l.48-.88h0s-.48.88-.48.88Zm75.99,44.16l-.53.85h0s.53-.85.53-.85Zm.13,85.14l.55.84h0s-.55-.84-.55-.84Zm-15.5,9.32l.54.84h0s-.54-.84-.54-.84Zm-5.4,15.81l.84-.55h0s-.83.55-.83.55Zm16.66,3.25l-.47-.89h0s.47.89.47.89Zm18.51-10.99l-.57-.82h0s.57.82.57.82Zm1.64-118.31l.56-.83h0l-.56.83Zm-86.44-50.03l-.44.9h0s.44-.9.44-.9Zm-100.47,54.18l.99.14h0s-.99-.14-.99-.14Zm-.4,54.06l.89.45.11-.21v-.24h-1Zm266.9-3.83l-.71.71,2.08,2.09-.38-2.92-.99.13Zm-3.21-23.61l-.98.2h0s.98-.2.98-.2Zm-74.75-87.73l.45-.89h0s-.45.89-.45.89Zm-14.66,4.85l.87.49h0s-.87-.49-.87-.49Zm3.68,14.29l.55-.83h0s-.55.83-.55.83Zm19.18,11.56l-.54.84h0s.54-.84.54-.84Zm.77,167.35l.54.84h0s-.54-.84-.54-.84Zm-81.93,47.53l-.46-.89h0l.46.89ZM27.26,234.53l.97-.25h0s-.97.25-.97.25Zm-3.79-41.7l1-.08h0s-1,.08-1,.08Zm-11.25-12.65v-1s0,0,0,0v1Zm-11.21,12.54l-1,.02h0s1-.02,1-.02Zm2.21,37.65l-.98.18h0s.98-.18.98-.18Zm180.99,84.56l-.49-.87.49.87Zm74.44-43.3l-.51-.86h0s.51.86.51.86Zm60.35-109.08l.71-.71-1.65-1.65-.06,2.33,1,.03Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="m318.98,162.55c-1.31,49.57-20.51,85.27-60.35,109.08-24.63,14.73-49.44,29.21-74.44,43.3-72.98,41.15-165.62-2.02-180.99-84.56-2.28-12.27-1.95-25.09-2.21-37.65-.15-7.82,4.67-12.56,11.21-12.54,6.51.04,10.63,4.81,11.25,12.65,1.08,13.93.29,28.39,3.79,41.7,15.88,60.42,85.34,91.19,140.82,62.28,27.99-14.59,55.41-30.45,81.93-47.53,61.73-39.78,61-127.69-.77-167.35-6.27-4.03-12.96-7.44-19.18-11.56-5.29-3.48-6.71-8.88-3.68-14.29,3.12-5.58,8.37-7.99,14.66-4.85,37.36,18.67,65.85,45,74.75,87.73,1.86,8.92,2.48,18.07,3.21,23.61l-.02-.02Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="m52.1,166.39c0-18.03-2.11-36.37.4-54.06,6.67-46.98,57.74-74.91,100.47-54.18,29.9,14.49,59,31.3,86.44,50.03,40.93,27.93,39.25,90.17-1.64,118.31-5.91,4.07-12.16,7.66-18.51,10.99-6.2,3.26-12.34,3.34-16.66-3.25-3.65-5.52-1.57-11.39,5.4-15.81,5.09-3.23,10.46-6.03,15.5-9.32,31.32-20.47,31.6-65.29-.13-85.14-24.81-15.53-50.25-30.17-75.99-44.16-32.56-17.68-73.38,6.69-73.77,43.63-.29,28.4-.27,56.83,0,85.23.36,37.89,41.79,61.81,75.06,43.5,5.29-2.9,10.25-6.49,15.72-8.92,5.69-2.52,11.72-2.24,14.99,3.99,2.79,5.32,1.84,10.98-3.32,14.6-31.63,22.24-65.65,28.2-99.22,1.66-16.99-13.45-25.11-31.8-25.91-53.18-.53-14.62-.11-29.26-.11-43.9h1.26l.02-.04Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="m100.84,132.08c-.04-19,4.74-27.38,18.89-29.77,5.43-.91,12.23.4,17.1,3.08,23.39,12.89,46.45,26.38,69.41,40.07,17.58,10.48,17.74,31.5.31,41.91-22.68,13.55-45.76,26.44-68.5,39.89-17.83,10.56-39.54-1.53-37.3-22.1.53-4.83-.24-9.79.24-14.62.62-6.24,4.47-10.12,10.79-10.06,6.25.05,9.88,3.54,10.43,10.19,1.53,18.45,1.68,18.51,17.67,9.39,15.46-8.82,30.87-17.78,46.24-26.76,9.57-5.6,9.52-8-.27-13.73-17.1-10.01-34.24-19.98-51.43-29.85-8.99-5.16-11.72-3.63-12.18,6.53-.07,1.71-.09,3.45-.07,5.16.07,7.11-4.18,11.12-10.54,11.12s-10.59-4.05-10.77-11.03c-.07-3.15,0-6.31,0-9.46v.04Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="m2.43,126.25C.37,46.8,68.56-1.81,131.02,1.13c25.43,1.2,47.91,10.92,68.72,24.94,6.22,4.19,7.46,10.63,3.99,16.66-3.88,6.76-10.12,6.31-16.44,2.52-14.79-8.86-29.77-17.03-47.24-20C86.37,16.13,31.46,56.71,25.31,110.66c-1.09,9.64-1.13,19.42-1.44,29.15-.22,7.07-3.01,11.69-10.65,11.7-7.51,0-10.79-4.3-10.77-11.5v-13.76h-.02Z"
+                  />
+                </svg>
+              </div>
+              <h2 class="">Idram: Leading Payment System</h2>
+              <p class="">
+                Spreading the culture of contactless payments by developing QR
+                payments and providing instant payment tools.
+              </p>
+              <div class="brands-card_icon">
+                <svg
+                  width="29"
+                  height="29"
+                  class="plus-icon"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.3926 28.0742C6.77734 28.0742 0.447266 21.7441 0.447266 14.1289C0.447266 6.5 6.76367 0.183594 14.3789 0.183594C22.0078 0.183594 28.3379 6.5 28.3379 14.1289C28.3379 21.7441 22.0215 28.0742 14.3926 28.0742ZM14.3926 25.75C20.8457 25.75 26.0137 20.582 26.0137 14.1289C26.0137 7.67578 20.832 2.50781 14.3789 2.50781C7.92578 2.50781 2.78516 7.67578 2.78516 14.1289C2.78516 20.582 7.93945 25.75 14.3926 25.75ZM8.04883 14.1289C8.04883 13.4453 8.51367 12.9668 9.21094 12.9668H13.2305V8.94727C13.2305 8.25 13.6953 7.77148 14.3652 7.77148C15.0488 7.77148 15.5273 8.25 15.5273 8.94727V12.9668H19.5605C20.2441 12.9668 20.7227 13.4453 20.7227 14.1289C20.7227 14.7988 20.2441 15.25 19.5605 15.25H15.5273V19.2832C15.5273 19.9805 15.0488 20.4453 14.3652 20.4453C13.6953 20.4453 13.2305 19.9668 13.2305 19.2832V15.25H9.21094C8.51367 15.25 8.04883 14.7988 8.04883 14.1289Z"
+                    fill="#FF511B"
+                  />
+                </svg>
+                <a href="https://www.idram.am/" target="_blank">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2246 19.9629C12.5996 19.6836 11.584 19.1123 10.7842 18.3125C7.69922 15.2402 7.72461 10.9238 10.7715 7.87695L15.1006 3.53516C18.1475 0.488281 22.4639 0.462891 25.5488 3.54785C28.6211 6.63281 28.5957 10.9365 25.5615 13.9834L21.8291 17.7031C21.9561 16.8779 21.8799 15.9385 21.5244 15.126L24.0127 12.6377C26.209 10.4414 26.2344 7.30566 24.0127 5.08398C21.791 2.8623 18.668 2.875 16.4463 5.08398L12.3076 9.22266C10.1113 11.4189 10.0986 14.5674 12.3203 16.7891C13.1455 17.6143 14.2373 18.1221 15.9131 18.249L14.2246 19.9629ZM14.542 9.50195C16.167 9.78125 17.1826 10.3525 17.9824 11.1523C21.0674 14.2246 21.042 18.541 17.9951 21.5879L13.6533 25.9424C10.6191 28.9766 6.30273 29.002 3.21777 25.917C0.145508 22.8447 0.170898 18.5283 3.20508 15.4814L6.9375 11.7617C6.79785 12.5869 6.88672 13.5391 7.24219 14.3389L4.75391 16.8271C2.54492 19.0361 2.53223 22.1592 4.75391 24.3936C6.97559 26.6025 10.0986 26.5898 12.3076 24.3809L16.459 20.2422C18.6553 18.0459 18.668 14.8975 16.4463 12.6758C15.6211 11.8506 14.5293 11.3555 12.8535 11.2158L14.542 9.50195Z"
+                      fill="#EA5E33"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="brands-card_info" data-accordion-id="brand1">
+              <video
+                id="video1"
+                class="lazy-media"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="pointer-events: none"
+              >
+                <source
+                  data-src="../assets/video/idram_750x640.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="brands-card_info-header">
+                <span>
+                  <svg
+                    width="11"
+                    height="9"
+                    viewBox="0 0 11 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.63397 0.724609C5.01887 0.0579426 5.98113 0.0579426 6.36603 0.724609L10.2631 7.47461C10.648 8.14128 10.1669 8.97461 9.39711 8.97461H1.60289C0.833085 8.97461 0.35196 8.14128 0.73686 7.47461L4.63397 0.724609Z"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  Wallet
+                </span>
+                <h3>Innovative payment solutions</h3>
+              </div>
+              <div class="brands-card_info-footer">
+                <p></p>
+              </div>
+            </div>
+          </div>-->
+
+      <!---   <div class="brands-card_container">
+            <div class="brands-card">
+              <div class="brands-card_image">
+                <svg
+                  width="199"
+                  height="193"
+                  viewBox="0 0 199 193"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M190.854 84.6447C183.34 70.1314 174.894 56.1089 166.681 41.9798C163.527 36.5587 160.32 31.0521 156.319 26.282C138.729 5.36574 115.995 -2.56322 89.3238 0.712943C66.4946 3.51956 48.9044 15.1729 36.8918 34.7872C27.2182 50.6024 17.9785 66.7058 9.23632 83.0546C-2.19417 104.408 -3.15729 126.648 7.14073 148.663C20.4657 177.178 42.9668 192.267 74.4959 192.918C82.8254 193.089 91.1654 192.94 99.5054 192.94C108.576 192.929 117.646 193.1 126.706 192.865C131.363 192.737 136.062 192.257 140.623 191.317C185.721 182.033 213.726 128.836 190.854 84.6447ZM134.771 175.961C124.335 177.466 113.614 176.9 103.019 177.263C101.876 177.306 100.723 177.274 99.5795 177.274H76.7503C46.8511 177.274 23.8208 158.812 17.3753 129.316C14.1895 114.728 17.0895 100.993 24.4346 88.1449C32.3301 74.3146 40.3315 60.5483 48.1635 46.686C57.6148 29.9423 71.5537 19.4522 90.4669 16.5388C112.915 13.0813 135.956 21.7786 149.069 43.5165C158.383 58.9369 167.295 74.6241 175.942 90.4286C195.776 126.701 171.581 170.668 134.771 175.961Z"
+                    fill="#515151"
+                  />
+                  <path
+                    d="M163.737 96.5325C155.46 81.475 146.93 66.5561 138.156 51.7867C120.343 21.8317 78.1774 22.2265 60.7354 52.395C52.5541 66.5455 44.521 80.7706 36.3821 94.9424C32.1591 102.274 30.0424 110.064 30.1059 118.623C30.2858 142.9 49.7811 162.952 73.9122 163.24C82.5591 163.347 91.2061 163.262 99.853 163.262V163.294C107.78 163.294 115.697 163.358 123.614 163.262C126.725 163.219 129.869 163.038 132.917 162.472C162.467 157.019 178.374 123.126 163.737 96.5325ZM130.123 146.657C128.016 147.126 125.783 147.126 123.614 147.137C115.591 147.19 107.569 147.158 99.5461 147.158V147.116C90.698 147.116 81.8394 147.308 72.9914 147.073C59.8992 146.721 48.4052 136.049 46.2356 123.041C45.0608 116.061 46.352 109.669 49.7282 103.682C57.9624 89.0944 66.3342 74.5705 74.6636 60.0358C85.6073 40.9337 113.707 40.9658 124.619 60.1105C132.864 74.5705 141.331 88.913 149.406 103.48C159.27 121.258 149.798 142.271 130.123 146.657Z"
+                    fill="#515151"
+                  />
+                  <path
+                    d="M137.078 109.499C129.214 95.658 121.265 81.8703 113.359 68.0507C106.85 56.6641 92.6787 56.4294 86.0956 67.7412C77.9249 81.7636 69.8706 95.8607 61.954 110.033C60.6733 112.327 59.8055 115.134 59.689 117.748C59.2657 126.627 66.3039 133.435 75.8399 133.585C83.7566 133.713 91.6732 133.606 99.5899 133.606C107.507 133.606 115.635 133.777 123.657 133.574C136.707 133.243 143.544 120.907 137.078 109.499ZM118.344 117.407C112.1 117.428 105.845 117.417 99.6005 117.417C93.3561 117.417 86.6883 117.449 80.2427 117.407C76.8771 117.385 76.4326 116.628 78.0942 113.714C84.5186 102.445 90.9641 91.1759 97.4308 79.9281C99.2089 76.844 100.066 76.844 101.834 79.9068C108.195 90.9838 114.545 102.061 120.863 113.149C122.948 116.82 122.578 117.407 118.344 117.407Z"
+                    fill="#515151"
+                  />
+                </svg>
+              </div>
+              <h2 class="">IDBank: Introducing Modern Banking</h2>
+              <p class="">
+                Offering integrated banking and payment services to meet a wide
+                range of financial and transactional needs of customers.
+              </p>
+              <div class="brands-card_icon">
+                <svg
+                  width="29"
+                  height="29"
+                  class="plus-icon"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.3926 28.0742C6.77734 28.0742 0.447266 21.7441 0.447266 14.1289C0.447266 6.5 6.76367 0.183594 14.3789 0.183594C22.0078 0.183594 28.3379 6.5 28.3379 14.1289C28.3379 21.7441 22.0215 28.0742 14.3926 28.0742ZM14.3926 25.75C20.8457 25.75 26.0137 20.582 26.0137 14.1289C26.0137 7.67578 20.832 2.50781 14.3789 2.50781C7.92578 2.50781 2.78516 7.67578 2.78516 14.1289C2.78516 20.582 7.93945 25.75 14.3926 25.75ZM8.04883 14.1289C8.04883 13.4453 8.51367 12.9668 9.21094 12.9668H13.2305V8.94727C13.2305 8.25 13.6953 7.77148 14.3652 7.77148C15.0488 7.77148 15.5273 8.25 15.5273 8.94727V12.9668H19.5605C20.2441 12.9668 20.7227 13.4453 20.7227 14.1289C20.7227 14.7988 20.2441 15.25 19.5605 15.25H15.5273V19.2832C15.5273 19.9805 15.0488 20.4453 14.3652 20.4453C13.6953 20.4453 13.2305 19.9668 13.2305 19.2832V15.25H9.21094C8.51367 15.25 8.04883 14.7988 8.04883 14.1289Z"
+                    fill="#FF511B"
+                  />
+                </svg>
+                <a href="https://idbank.am/" target="_blank">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2246 19.9629C12.5996 19.6836 11.584 19.1123 10.7842 18.3125C7.69922 15.2402 7.72461 10.9238 10.7715 7.87695L15.1006 3.53516C18.1475 0.488281 22.4639 0.462891 25.5488 3.54785C28.6211 6.63281 28.5957 10.9365 25.5615 13.9834L21.8291 17.7031C21.9561 16.8779 21.8799 15.9385 21.5244 15.126L24.0127 12.6377C26.209 10.4414 26.2344 7.30566 24.0127 5.08398C21.791 2.8623 18.668 2.875 16.4463 5.08398L12.3076 9.22266C10.1113 11.4189 10.0986 14.5674 12.3203 16.7891C13.1455 17.6143 14.2373 18.1221 15.9131 18.249L14.2246 19.9629ZM14.542 9.50195C16.167 9.78125 17.1826 10.3525 17.9824 11.1523C21.0674 14.2246 21.042 18.541 17.9951 21.5879L13.6533 25.9424C10.6191 28.9766 6.30273 29.002 3.21777 25.917C0.145508 22.8447 0.170898 18.5283 3.20508 15.4814L6.9375 11.7617C6.79785 12.5869 6.88672 13.5391 7.24219 14.3389L4.75391 16.8271C2.54492 19.0361 2.53223 22.1592 4.75391 24.3936C6.97559 26.6025 10.0986 26.5898 12.3076 24.3809L16.459 20.2422C18.6553 18.0459 18.668 14.8975 16.4463 12.6758C15.6211 11.8506 14.5293 11.3555 12.8535 11.2158L14.542 9.50195Z"
+                      fill="#EA5E33"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="brands-card_info" data-accordion-id="brand1">
+              <video
+                id="video1"
+                class="lazy-media"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="pointer-events: none"
+              >
+                <source
+                  data-src="../assets/video/idbank_750x640.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="brands-card_info-header">
+                <span>
+                  <svg
+                    width="11"
+                    height="9"
+                    viewBox="0 0 11 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.63397 0.724609C5.01887 0.0579426 5.98113 0.0579426 6.36603 0.724609L10.2631 7.47461C10.648 8.14128 10.1669 8.97461 9.39711 8.97461H1.60289C0.833085 8.97461 0.35196 8.14128 0.73686 7.47461L4.63397 0.724609Z"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  Banking
+                </span>
+                <h3>Personalized banking services</h3>
+              </div>
+              <div class="brands-card_info-footer">
+                <p></p>
+              </div>
+            </div>
+          </div>-->
+
+       <!---  <div class="brands-card_container">
+            <div class="brands-card">
+              <div class="brands-card_image tomsarkgh">
+                <img src="../assets/img/tomsarkgh.svg" alt="Tomsarkgh.AM" />
+              </div>
+              <h2 class="">Tomsarkgh.am: Armenian Ticket Operator</h2>
+              <p class="">
+                Tomsarkgh.am is the leading Armenian ticket operator providing
+                online ticket sales and optional delivery.
+              </p>
+              <div class="brands-card_icon">
+                <svg
+                  width="29"
+                  height="29"
+                  class="plus-icon"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.3926 28.0742C6.77734 28.0742 0.447266 21.7441 0.447266 14.1289C0.447266 6.5 6.76367 0.183594 14.3789 0.183594C22.0078 0.183594 28.3379 6.5 28.3379 14.1289C28.3379 21.7441 22.0215 28.0742 14.3926 28.0742ZM14.3926 25.75C20.8457 25.75 26.0137 20.582 26.0137 14.1289C26.0137 7.67578 20.832 2.50781 14.3789 2.50781C7.92578 2.50781 2.78516 7.67578 2.78516 14.1289C2.78516 20.582 7.93945 25.75 14.3926 25.75ZM8.04883 14.1289C8.04883 13.4453 8.51367 12.9668 9.21094 12.9668H13.2305V8.94727C13.2305 8.25 13.6953 7.77148 14.3652 7.77148C15.0488 7.77148 15.5273 8.25 15.5273 8.94727V12.9668H19.5605C20.2441 12.9668 20.7227 13.4453 20.7227 14.1289C20.7227 14.7988 20.2441 15.25 19.5605 15.25H15.5273V19.2832C15.5273 19.9805 15.0488 20.4453 14.3652 20.4453C13.6953 20.4453 13.2305 19.9668 13.2305 19.2832V15.25H9.21094C8.51367 15.25 8.04883 14.7988 8.04883 14.1289Z"
+                    fill="#FF511B"
+                  />
+                </svg>
+                <a href="https://www.tomsarkgh.am/" target="_blank">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2246 19.9629C12.5996 19.6836 11.584 19.1123 10.7842 18.3125C7.69922 15.2402 7.72461 10.9238 10.7715 7.87695L15.1006 3.53516C18.1475 0.488281 22.4639 0.462891 25.5488 3.54785C28.6211 6.63281 28.5957 10.9365 25.5615 13.9834L21.8291 17.7031C21.9561 16.8779 21.8799 15.9385 21.5244 15.126L24.0127 12.6377C26.209 10.4414 26.2344 7.30566 24.0127 5.08398C21.791 2.8623 18.668 2.875 16.4463 5.08398L12.3076 9.22266C10.1113 11.4189 10.0986 14.5674 12.3203 16.7891C13.1455 17.6143 14.2373 18.1221 15.9131 18.249L14.2246 19.9629ZM14.542 9.50195C16.167 9.78125 17.1826 10.3525 17.9824 11.1523C21.0674 14.2246 21.042 18.541 17.9951 21.5879L13.6533 25.9424C10.6191 28.9766 6.30273 29.002 3.21777 25.917C0.145508 22.8447 0.170898 18.5283 3.20508 15.4814L6.9375 11.7617C6.79785 12.5869 6.88672 13.5391 7.24219 14.3389L4.75391 16.8271C2.54492 19.0361 2.53223 22.1592 4.75391 24.3936C6.97559 26.6025 10.0986 26.5898 12.3076 24.3809L16.459 20.2422C18.6553 18.0459 18.668 14.8975 16.4463 12.6758C15.6211 11.8506 14.5293 11.3555 12.8535 11.2158L14.542 9.50195Z"
+                      fill="#EA5E33"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="brands-card_info" data-accordion-id="brand1">
+              <video
+                id="video1"
+                class="lazy-media desktop_tomsarkgh"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="pointer-events: none"
+              >
+                <source
+                  data-src="../assets/video/tomsarkgh1_750x640.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <video
+                id="video1"
+                class="lazy-media mobile_tomsarkgh"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="pointer-events: none"
+              >
+                <source
+                  data-src="../assets/video/tomsarkgh1_374x600.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="brands-card_info-header">
+                <span>
+                  <svg
+                    width="11"
+                    height="9"
+                    viewBox="0 0 11 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.63397 0.724609C5.01887 0.0579426 5.98113 0.0579426 6.36603 0.724609L10.2631 7.47461C10.648 8.14128 10.1669 8.97461 9.39711 8.97461H1.60289C0.833085 8.97461 0.35196 8.14128 0.73686 7.47461L4.63397 0.724609Z"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  Ticketing
+                </span>
+                <h3>Armenian Leading Ticketing Platform</h3>
+              </div>
+              <div class="brands-card_info-footer">
+                <p></p>
+              </div>
+            </div>
+          </div>-->
+
+          <div class="brands-card_container">
+            <div class="brands-card">
+              <div class="brands-card_image" color="white">
+                <img
+                  src="../assets/opraflow_logo-removebg-preview.png"
+                  alt="ID Leasing"
+                  class="id_leasing_logo"
+                />
+              </div>
+              <h2 class="">أوبرافلو: نظام الموارد البشرية والمرافق</h2>
+              <p class="">
+                تقدم أوبرتريكس برنامج أوبرا فلو للذكاء الاصطناعي 
+امتلك الآن نموذج الذكاء الاصطناعي الخاص بمؤسستك
+              </p>
+              <div class="brands-card_icon">
+                <svg
+                  width="29"
+                  height="29"
+                  class="plus-icon"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.3926 28.0742C6.77734 28.0742 0.447266 21.7441 0.447266 14.1289C0.447266 6.5 6.76367 0.183594 14.3789 0.183594C22.0078 0.183594 28.3379 6.5 28.3379 14.1289C28.3379 21.7441 22.0215 28.0742 14.3926 28.0742ZM14.3926 25.75C20.8457 25.75 26.0137 20.582 26.0137 14.1289C26.0137 7.67578 20.832 2.50781 14.3789 2.50781C7.92578 2.50781 2.78516 7.67578 2.78516 14.1289C2.78516 20.582 7.93945 25.75 14.3926 25.75ZM8.04883 14.1289C8.04883 13.4453 8.51367 12.9668 9.21094 12.9668H13.2305V8.94727C13.2305 8.25 13.6953 7.77148 14.3652 7.77148C15.0488 7.77148 15.5273 8.25 15.5273 8.94727V12.9668H19.5605C20.2441 12.9668 20.7227 13.4453 20.7227 14.1289C20.7227 14.7988 20.2441 15.25 19.5605 15.25H15.5273V19.2832C15.5273 19.9805 15.0488 20.4453 14.3652 20.4453C13.6953 20.4453 13.2305 19.9668 13.2305 19.2832V15.25H9.21094C8.51367 15.25 8.04883 14.7988 8.04883 14.1289Z"
+                    fill="#FF511B"
+                  />
+                </svg>
+                <a href="#" target="_blank">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2246 19.9629C12.5996 19.6836 11.584 19.1123 10.7842 18.3125C7.69922 15.2402 7.72461 10.9238 10.7715 7.87695L15.1006 3.53516C18.1475 0.488281 22.4639 0.462891 25.5488 3.54785C28.6211 6.63281 28.5957 10.9365 25.5615 13.9834L21.8291 17.7031C21.9561 16.8779 21.8799 15.9385 21.5244 15.126L24.0127 12.6377C26.209 10.4414 26.2344 7.30566 24.0127 5.08398C21.791 2.8623 18.668 2.875 16.4463 5.08398L12.3076 9.22266C10.1113 11.4189 10.0986 14.5674 12.3203 16.7891C13.1455 17.6143 14.2373 18.1221 15.9131 18.249L14.2246 19.9629ZM14.542 9.50195C16.167 9.78125 17.1826 10.3525 17.9824 11.1523C21.0674 14.2246 21.042 18.541 17.9951 21.5879L13.6533 25.9424C10.6191 28.9766 6.30273 29.002 3.21777 25.917C0.145508 22.8447 0.170898 18.5283 3.20508 15.4814L6.9375 11.7617C6.79785 12.5869 6.88672 13.5391 7.24219 14.3389L4.75391 16.8271C2.54492 19.0361 2.53223 22.1592 4.75391 24.3936C6.97559 26.6025 10.0986 26.5898 12.3076 24.3809L16.459 20.2422C18.6553 18.0459 18.668 14.8975 16.4463 12.6758C15.6211 11.8506 14.5293 11.3555 12.8535 11.2158L14.542 9.50195Z"
+                      fill="#EA5E33"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="brands-card_info" data-accordion-id="brand1">
+              <video
+                id="video1"
+                class="lazy-media"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="pointer-events: none"
+              >
+                <source
+                  data-src="../assets/video/leasing_800x570.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="brands-card_info-header">
+                
+              </div>
+              <div class="brands-card_info-footer">
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="brands-pagination">
+            <!-- <button class="pagination-btn" data-page="1" data-direction="left">
+                    <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.974121 8.59668C0.974121 8.40186 1.05615 8.22754 1.20996 8.08398L8.05957 1.21387C8.25439 1.01904 8.42871 0.947266 8.61328 0.947266C9.00293 0.947266 9.30029 1.23438 9.30029 1.61377C9.30029 1.80859 9.23877 1.98291 9.10547 2.11621L6.03955 5.21289L3.01465 8.02246L5.39355 7.90967H19.3389C19.7285 7.90967 20.0156 8.19678 20.0156 8.59668C20.0156 8.99658 19.7285 9.28369 19.3389 9.28369H5.39355L3.00439 9.1709L6.03955 11.9805L9.10547 15.0771C9.22852 15.2002 9.30029 15.3848 9.30029 15.5693C9.30029 15.9487 9.00293 16.2358 8.61328 16.2358C8.42871 16.2358 8.26465 16.1743 8.11084 16.0308L1.20996 9.10938C1.05615 8.96582 0.974121 8.7915 0.974121 8.59668Z"
+                            fill="#555555" />
+                    </svg>
+                </button>
+                <button class="pagination-btn" data-page="2" data-direction="right">
+                    <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.0156 8.59668C20.0156 8.7915 19.9336 8.96582 19.7798 9.10938L12.8789 16.0308C12.7251 16.1743 12.561 16.2358 12.3765 16.2358C11.9868 16.2358 11.6997 15.9487 11.6997 15.5693C11.6997 15.3848 11.7612 15.2002 11.8843 15.0771L14.9502 11.9805L17.9854 9.1709L15.5962 9.28369H1.65088C1.26123 9.28369 0.974121 8.99658 0.974121 8.59668C0.974121 8.19678 1.26123 7.90967 1.65088 7.90967H15.5962L17.9751 8.02246L14.9502 5.21289L11.8843 2.11621C11.7612 1.98291 11.6997 1.80859 11.6997 1.61377C11.6997 1.23438 11.9868 0.947266 12.3765 0.947266C12.561 0.947266 12.7354 1.01904 12.9302 1.21387L19.7798 8.08398C19.9336 8.22754 20.0156 8.40186 20.0156 8.59668Z"
+                            fill="#555555" />
+                    </svg>
+                </button> -->
+            <button
+              class="pagination-btn"
+              data-page="1"
+              data-direction="left"
+            ></button>
+            <button
+              class="pagination-btn"
+              data-page="2"
+              data-direction="right"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!--discover-->
+      <div class="discover-container section">
+        <div class="discover-head">
+          <span class="discover-description">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="0.363281"
+                width="9.35537"
+                height="8.72818"
+                rx="3"
+                fill="white"
+              />
+            </svg>
+            روايتنا
+          </span>
+          <h1>
+            أن تكون رائداً عالمياً في مجال الذكاء الاصطناعي والتقنيات المتقدمة مع
+            <span id="discover-idbank">أوبرتريكس</span>
+          </h1>
+          <p style="text-align: center; max-width: 29.6vw">
+            نحن نقدم حلولاً تقنية مبتكرة تساعد المؤسسات على التحول الرقمي وتحقيق النمو المستدام الذي يعزز قدرتها التنافسية في الأسواق العالمية.
+          </p>
+        </div>
+        <a class="discover-footer" href="#">
+          <svg
+            width="29"
+            height="29"
+            viewBox="0 0 29 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.3926 28.0742C6.77734 28.0742 0.447266 21.7441 0.447266 14.1289C0.447266 6.5 6.76367 0.183594 14.3789 0.183594C22.0078 0.183594 28.3379 6.5 28.3379 14.1289C28.3379 21.7441 22.0215 28.0742 14.3926 28.0742ZM14.3926 25.75C20.8457 25.75 26.0137 20.582 26.0137 14.1289C26.0137 7.67578 20.832 2.50781 14.3789 2.50781C7.92578 2.50781 2.78516 7.67578 2.78516 14.1289C2.78516 20.582 7.93945 25.75 14.3926 25.75ZM8.04883 14.1289C8.04883 13.4453 8.51367 12.9668 9.21094 12.9668H13.2305V8.94727C13.2305 8.25 13.6953 7.77148 14.3652 7.77148C15.0488 7.77148 15.5273 8.25 15.5273 8.94727V12.9668H19.5605C20.2441 12.9668 20.7227 13.4453 20.7227 14.1289C20.7227 14.7988 20.2441 15.25 19.5605 15.25H15.5273V19.2832C15.5273 19.9805 15.0488 20.4453 14.3652 20.4453C13.6953 20.4453 13.2305 19.9668 13.2305 19.2832V15.25H9.21094C8.51367 15.25 8.04883 14.7988 8.04883 14.1289Z"
+              fill="#FF511B"
+            />
+          </svg>
+          <p>See more</p>
+        </a>
+      </div>
+
+      <!--section 3-->
+      <div id="section-3">
+        <!-- solution and inovation -->
+        <div class="solution section">
+          <div class="solution-head">
+            <h1>رسالتنا</h1>
+            <p>
+              نحن نؤمن بأن التكنولوجيا يمكن أن تُحدث فرقاً حقيقياً، لذلك نعمل على تمكين المؤسسات من تحقيق الكفاءة والتوسع 
+ والابتكار من خلال حلول الذكاء الاصطناعي المتقدمة التي تجعل عملياتها أكثر ذكاءً وسلاسة.
+            </p>
+          </div>
+
+          <div class="solution-cards">
+            <div class="solution-card white-bg">
+              <div class="solution-card-head">
+                <span class="solution-card-head_desc">
+                  <svg
+                    width="11"
+                    height="10"
+                    viewBox="0 0 11 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.871094"
+                      y="0.363281"
+                      width="9.35537"
+                      height="8.72818"
+                      rx="3"
+                      fill="#363636"
+                    />
+                  </svg>
+                  أوبرتريكس
+                </span>
+                <h3>الابتكار</h3>
+              </div>
+              <div class="gif-content">
+                <img src="../assets/video/ID-Web-01.gif" alt="ID-Web-01" />
+              </div>
+              <p>
+                نحن نركز على تطوير حلول تكنولوجية ثورية
+ تُحدث تأثيراً حقيقياً في السوق
+              </p>
+            </div>
+            <div class="solution-card black-bg">
+              <div class="solution-card-head">
+                <span class="solution-card-head_desc">
+                  <svg
+                    width="11"
+                    height="10"
+                    viewBox="0 0 11 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.871094"
+                      y="0.363281"
+                      width="9.35537"
+                      height="8.72818"
+                      rx="3"
+                      fill="#363636"
+                    />
+                  </svg>
+                  أوبرتريكس / تيكزيا
+                </span>
+                <h3>الأمن</h3>
+              </div>
+              <div class="gif-content">
+                <img src="../assets/video/ID-Web-02.gif" alt="ID-Web-02" />
+              </div>
+              <p>
+                نحن نضمن حماية البيانات والأمن السيبراني من خلال التقنيات المتقدمة
+              </p>
+              <!-- <img src="../assets/img/newscard-img(1).png" alt="Fintech solutions"> -->
+            </div>
+            <div class="solution-card white-bg">
+              <div class="solution-card-head">
+                <span class="solution-card-head_desc">
+                  <svg
+                    width="11"
+                    height="10"
+                    viewBox="0 0 11 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.871094"
+                      y="0.363281"
+                      width="9.35537"
+                      height="8.72818"
+                      rx="3"
+                      fill="#363636"
+                    />
+                  </svg>
+                  أوبرتريكس
+                </span>
+                <h3>الكفاءة</h3>
+              </div>
+              <div class="gif-content">
+                <img src="../assets/video/ID-Web-03.gif" alt="ID-Web-03" />
+              </div>
+              <p>
+                نحن نساعد الشركات على تحسين أدائها 
+ من خلال التقنيات المتقدمة
+              </p>
+            </div>
+          </div>
+          <div class="solution-card black-bg">
+            <div class="solution-card-head">
+              <span class="solution-card-head_desc">
+                <svg
+                  width="11"
+                  height="10"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.871094"
+                    y="0.363281"
+                    width="9.35537"
+                    height="8.72818"
+                    rx="3"
+                    fill="#363636"
+                  />
+                </svg>
+                أوبرتريكس
+              </span>
+              <h3>التطوير المستمر</h3>
+            </div>
+            <div class="gif-content">
+              <img src="../assets/video/ID-Web-02.gif" alt="ID-Web-02" />
+            </div>
+            <p>
+              نحن نواكب أحدث التقنيات لضمان أن 
+ حلولنا دائماً في الطليعة
+            </p>
+            <!-- <img src="../assets/img/newscard-img(1).png" alt="Fintech solutions"> -->
+          </div>
+          <a class="solution-footer" href="#">
+            
+          </a>
+        </div>
+        <!--fin cards-->
+        <div class="fin-cards section">
+          <div class="discover-head">
+            <span class="discover-description">          
+              خدماتنا
+            </span>
+            <h6>
+              الخدمات التي نقدمها أكثر كفاءة واستمرارية مع 
+ أكثر المهندسين المؤهلين حول العالم
+            </h6>
+          </div>
+          <a class="fin-card black-bg" href="#">
+            <div class="fin-card-head">
+              <span class="fin-card-head_desc">
+                <svg
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.871094"
+                  y="0.363281"
+                  width="9.35537"
+                  height="8.72818"
+                  rx="3"
+                  fill="#363636"
+                />
+              </svg>
+              أوبرتريكس
+              </span>
+              <h3>تطوير الأنظمة الذكية</h3>
+            </div>
+            <div class="fin-card-foot">
+              <p>بناء أنظمة تعتمد على الذكاء الاصطناعي لتحسين العمليات وزيادة الإنتاجية</p>
+              
+            </div>
+            <img src="../assets/img/black-image.png" alt="Finance Pioneer" />
+          </a>
+
+          <a class="fin-card white-bg" href="#">
+            <div class="fin-card-head">
+              <span>
+                <svg
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.871094"
+                  y="0.363281"
+                  width="9.35537"
+                  height="8.72818"
+                  rx="3"
+                  fill="#363636"
+                />
+              </svg>
+              أوبرتريكس
+              </span>
+              <h3>توفير الأدوات الذكية</h3>
+            </div>
+            <div class="fin-card-foot">
+              <p>نحن نوفر أدوات مدعومة ومتكاملة لجميع المؤسسات والشركات 
+                الأجهزة الذكية الأجهزة الذكية</p>
+             
+            </div>
+            <img src="../assets/img/fincard-img(2).png" alt="Finance Pioneer" />
+          </a>
+
+          <a class="fin-card black-bg" href="#">
+            <div class="fin-card-head">
+              <span class="fin-card-head_desc">
+                <svg
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.871094"
+                  y="0.363281"
+                  width="9.35537"
+                  height="8.72818"
+                  rx="3"
+                  fill="#363636"
+                />
+              </svg>
+              أوبرتريكس
+              </span>
+              <h3>الأمن والمراقبة</h3>
+            </div>
+            <div class="fin-card-foot">
+              <p>تطوير أنظمة الأمن والمراقبة الأمنية وخدمات الأمن السحابي</p>
+             
+            </div>
+            <img src="../assets/img/black-image.png" alt="Finance Pioneer" />
+          </a>
+
+          <a class="fin-card white-bg" href="#">
+            <div class="fin-card-head">
+              <span class="fin-card-head_desc">
+                <svg
+                  width="11"
+                  height="10"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.871094"
+                    y="0.363281"
+                    width="9.35537"
+                    height="8.72818"
+                    rx="3"
+                    fill="#363636"
+                  />
+                </svg>
+                أوبرتريكس
+              </span>
+              <h3>الواقع المعزز</h3>
+            </div>
+            <div class="fin-card-foot">
+              <p>تقديم حلول واقع معزز متقدمة لتمكين الشركات من تحسين تجربة المستخدم والتفاعل مع البيانات بطرق جديدة</p>
+             
+            </div>
+            <img src="../assets/img/fincard-img(2).png" alt="Finance Pioneer" />
+          </a>
+
+          <a class="fin-card black-bg" href="#">
+            <div class="fin-card-head">
+              <span class="fin-card-head_desc">
+                <svg
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.871094"
+                  y="0.363281"
+                  width="9.35537"
+                  height="8.72818"
+                  rx="3"
+                  fill="#363636"
+                />
+              </svg>
+              أوبرتريكس
+              </span>
+              <h3>إدارة أعمال B2B في الوقت الحقيقي</h3>
+            </div>
+            
+            <div class="fin-card-foot">
+              <p>تتيح أنظمة الذكاء الاصطناعي للشركات إدارة فرق العمل وتتبع الأداء وتحليل البيانات في الوقت الفعلي</p>
+            </div>
+            <img src="../assets/img/fincard-img(3).png" alt="Finance Pioneer" />
+          </a>
+        </div>
+
+        <div class="footer-container">
+          <div class="footer">
+            <div class="footer-head">
+              <div class="footer-head_title">
+                <h3>يوبيرتريكس ذ.م.م. JP</h3>
+                <span>شركة الذكاء الاصطناعي</span>
+              </div>
+              <p>
+                يستخدم موقعنا الإلكتروني ملفات تعريف الارتباط لتحسين تجربتك. إذا كنت ترغب في إلغاء الاشتراك
+ يرجى <span class="click_here">انقر هنا.</span>
+              </p>
+            </div>
+            <div class="footer-main">
+              <div class="footer-cards">
+                <div class="footer-card">
+                  <h4>المعلومات</h4>
+                  <a
+                    
+                    target="_blank"
+                    >241-1134، ميناميامابوشيتشو، شينجوكو-كو، طوكيو، اليابان</a
+                  >
+                  <a>76576، اليمن، صنعاء</a>
+                  <div class="contacts">
+                    <a >+81 76-413-7556</a>
+                    <a>+967 734 805 146</a>
+                    <a>info@ubertrix.com</a
+                    >
+                  </div>
+                </div>
+                <div class="footer-card">
+                  <h4>الصفحات</h4>
+                  <a href="#">نبذة عن</a>
+                  <a href="#">جهات الاتصال</a>
+                </div>
+                <div class="footer-card">
+                  <h4>Social</h4>
+                  <a href="https://www.instagram.com/ubertrix.ai">انستقرام</a>
+                  <a href="https://www.facebook.com/ubertrix">فيسبوك</a>
+                  <a href="https://www.linkedin.com/company/ubertrix/"
+                    >لينكد إن</a
+                  >
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="garoon">
+            <a 
+              >تم تطويره بواسطة الحسن المازهاني</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--JS-->
+    <script
+      data-cfasync="false"
+      src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/script/app.js"></script>
+    <!--jQuery-->
+    <script
+      src="cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--scrolling-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let lazyMedia = [].slice.call(document.querySelectorAll(".lazy-media"));
+
+        if ("IntersectionObserver" in window) {
+          let lazyMediaObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const media = entry.target;
+                if (media.tagName === "IMG") {
+                  // Handle lazy loading of GIFs
+                  media.src = media.dataset.src;
+                  lazyMediaObserver.unobserve(media);
+                } else if (media.tagName === "VIDEO") {
+                  // Handle lazy loading of videos
+                  const source = media.querySelector("source");
+                  if (source && !source.src) {
+                    // Ensure source doesn't already have a src
+                    source.src = source.dataset.src;
+                    media.load(); // Reload video to apply the new source
+                  }
+                  lazyMediaObserver.unobserve(media);
+                }
+                media.classList.remove("lazy-media");
+              }
+            });
+          });
+
+          lazyMedia.forEach((media) => {
+            lazyMediaObserver.observe(media);
+          });
+        } else {
+          // Fallback for browsers that do not support Intersection Observer
+          lazyMedia.forEach((media) => {
+            if (media.tagName === "IMG") {
+              media.src = media.dataset.src;
+            } else if (media.tagName === "VIDEO") {
+              const source = media.querySelector("source");
+              source.src = source.dataset.src;
+              media.load();
+            }
+          });
+        }
+      });
+
+      $(document).ready(function () {
+        var sections = $(".section");
+        var currentSection = 0;
+        var scrolling = false;
+        var scrollLock = false;
+
+        function updateCurrentSection() {
+          var scrollTop = $(window).scrollTop();
+          sections.each(function (index, elem) {
+            var $elem = $(elem);
+            // if ($elem.offset().top <= scrollTop + 50) { // Buffer for partial visibility
+            //     currentSection = index;
+            // }
+
+            if ($elem.offset().top <= scrollTop + $(window).height() / 1.01) {
+              // Adjusting condition to consider the mid point
+              currentSection = index;
+            }
+          });
+        }
+
+        function checkScrollingAllowed() {
+          updateCurrentSection(); // Ensure the current section is updated whenever we check for allowed scrolling
+          return currentSection <= 4; // Only allow custom scrolling for sections 0 through 4
+        }
+
+        function disableDefaultScrolling(e) {
+          if (checkScrollingAllowed()) {
+            e.preventDefault(); // Prevent default scrolling only within the first 5 sections
+          }
+        }
+
+        window.addEventListener("wheel", disableDefaultScrolling, {
+          passive: false,
+        });
+
+        $(window).on("wheel", function (e) {
+          if (scrolling || scrollLock || !checkScrollingAllowed()) return;
+
+          var deltaY = e.originalEvent.deltaY;
+          var directionDown = deltaY > 0;
+
+          if (directionDown) {
+            if (currentSection < sections.length - 1) {
+              currentSection++;
+              scrolling = true;
+              animateScrollToSection(currentSection);
+            }
+          } else {
+            if (currentSection > 0) {
+              currentSection--;
+              scrolling = true;
+              animateScrollToSection(currentSection);
+            }
+          }
+
+          scrollLock = true;
+          setTimeout(function () {
+            scrollLock = false;
+          }, 1500); // Prevent multiple scrolls within a short time
+        });
+
+        function animateScrollToSection(sectionIndex) {
+          var $element = sections.eq(sectionIndex);
+          var targetTop = $element.offset().top;
+
+          $("html, body").animate(
+            {
+              scrollTop: targetTop,
+            },
+            800,
+            function () {
+              scrolling = false; // Ensure this flag is reset after the animation completes
+            }
+          );
+        }
+
+        // Additional handler to update section index on manual or script-based scroll
+        $(window).on("scroll", function () {
+          if (!scrolling) {
+            // Only update if not currently animating to prevent conflicts
+            updateCurrentSection();
+          }
+        });
+      });
+    </script>
+
+    <!--Animation on scroll for main text-->
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop() / 2;
+          var windowWidth = $(window).width();
+
+          if (windowWidth < 768) {
+            var leftPosition = 4.3;
+            var rightPosition = 4.3;
+
+            $(".main-text-1").css({
+              transform: "translateX(-" + scroll + "px)",
+              left: leftPosition + "vw",
+            });
+            $(".main-text-2").css({
+              transform: "translateX(" + scroll + "px)",
+              right: rightPosition + "vw",
+            });
+          } else {
+            var leftPosition = 4.5;
+            var rightPosition = 4.5;
+
+            $(".main-text-1").css({
+              transform: "translateX(-" + scroll + "px)",
+              left: leftPosition + "vw",
+            });
+            $(".main-text-2").css({
+              transform: "translateX(" + scroll + "px)",
+              right: rightPosition + "vw",
+            });
+          }
+        });
+      });
+    </script>
+
+    <!--brands animation-->
+    <script>
+      $(document).ready(function () {
+        function updateActiveStates() {
+          $(".brands-card_container").removeClass("active");
+          $(".brands-cards").removeClass("active");
+          $(".brands-description").removeClass("inactive");
+          $(".brands-card_icon svg.plus-icon").removeClass("rotate-45");
+        }
+
+        $(".brands-card").click(function () {
+          var isActive = $(this).parent().hasClass("active");
+          updateActiveStates();
+
+          if (!isActive) {
+            $(this).parent().addClass("active");
+            $(".brands-cards").addClass("active");
+            $(".brands-description").addClass("inactive");
+            $(this)
+              .find(".brands-card_icon svg.plus-icon")
+              .addClass("rotate-45");
+          }
+        });
+
+        if ($(window).width() > 744) {
+          var allCards = $(".brands-card_container");
+          allCards.slice(0, 2).css({ opacity: 1, visibility: "visible" });
+          var additionalWidth = $(window).width() * 0.015;
+          var cardWidth = 2 * (allCards.outerWidth() + additionalWidth);
+          var currentTranslateX = 0;
+          // allCards.last().css({ opacity: 0 });
+          allCards[2].style.opacity = 0;
+          allCards[3].style.opacity = 0;
+          $('.pagination-btn[data-direction="left"]').prop("disabled", true);
+
+          $(".pagination-btn").click(function () {
+            var direction = $(this).data("direction");
+            updateActiveStates();
+
+            if (direction === "left") {
+              currentTranslateX += cardWidth;
+              allCards[0].style.opacity = 1;
+              allCards[1].style.opacity = 1;
+              // allCards.first().css({ opacity: 1 });
+              // allCards.last().css({ opacity: 0 });
+              allCards[2].style.opacity = 0;
+              allCards[3].style.opacity = 0;
+              $('.pagination-btn[data-direction="right"]').prop(
+                "disabled",
+                false
+              );
+              $(this).prop("disabled", true);
+            } else if (direction === "right") {
+              currentTranslateX -= cardWidth;
+              // allCards.first().css({ opacity: 0 });
+              // allCards.last().css({ opacity: 1 });
+              allCards[0].style.opacity = 0;
+              allCards[1].style.opacity = 0;
+              allCards[2].style.opacity = 1;
+              allCards[3].style.opacity = 1;
+              $('.pagination-btn[data-direction="left"]').prop(
+                "disabled",
+                false
+              );
+              $(this).prop("disabled", true);
+            }
+
+            $(".brands-card_container").css(
+              "transform",
+              "translateX(" + currentTranslateX + "px)"
+            );
+          });
+        }
+      });
+    </script>
+
+    <!-- discover animeation -->
+    <script>
+      $(".arrow-prev").click(function () {
+        if (!$(this).hasClass("inactive")) {
+          $(`[data-direction='left']`).click();
+          $(this).addClass("inactive");
+          $(".arrow-next").removeClass("inactive");
+        }
+      });
+
+      $(".arrow-next").click(function () {
+        if (!$(this).hasClass("inactive")) {
+          $(`[data-direction='right']`).click();
+          $(this).addClass("inactive");
+          $(".arrow-prev").removeClass("inactive");
+        }
+      });
+
+      $(document).ready(function () {
+        var changed = false;
+
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          var offset = $(".discover-description").offset().top;
+          var windowHeight = $(window).height();
+
+          if (!changed && scroll + windowHeight >= offset) {
+            $(".discover-container, .discover-container *").css(
+              "transition",
+              "all 0.5s"
+            );
+            $(".discover-container svg path").css("transition", "fill 0.5s");
+
+            $(".discover-container").css("background-color", "white");
+            $(".discover-container").css("color", "black");
+            $(".discover-footer p").css("color", "black");
+            $(".discover-description").css("color", "black");
+            $(".discover-head h1").css("color", "black");
+            $(".discover-description svg rect").css("fill", "black");
+
+            setTimeout(function () {
+              // $('.discover-description').css('margin-left', '30px');
+              $("#discover-idbank").css("color", "#f5821e");
+            }, 1500);
+            setTimeout(function () {
+              $("#discover-idram").css("color", "#f5821e");
+            }, 2000);
+
+            changed = true;
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $(".click_here").click(function () {
+        $(this).addClass("success_click_here");
+      });
+      document
+        .querySelector(".nav_lang")
+        .addEventListener("click", function () {
+          var english = document.querySelector(".language-text.english");
+          var armenian = document.querySelector(".language-text.armenian");
+
+          if (english.classList.contains("active")) {
+            english.classList.remove("active");
+            english.classList.add("inactive");
+            armenian.classList.remove("inactive");
+            armenian.classList.add("active");
+          } else {
+            armenian.classList.remove("active");
+            armenian.classList.add("inactive");
+            english.classList.remove("inactive");
+            english.classList.add("active");
+          }
+        });
+    </script>
+  </body>
+</html>

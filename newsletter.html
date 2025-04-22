@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="ID Group" />
+    <meta property="og:title" content="ID Group" />
+    <meta
+      property="og:description"
+      content="Welcome to ID Group - Your partner for innovative fintech solutions"
+    />
+    <meta property="og:image" content="/main_logo.png" />
+    <meta property="og:url" content="https://idgroup.am/newsletter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:alt" content="ID Group" />
+    <title>ID Group</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/fav/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <style>
+      @media (min-width: 2240px) {
+        .nav_items li a {
+          font-size: 0.85vw !important;
+        }
+        .nav_media p {
+          font-size: 0.85vw !important;
+        }
+        .nav_lang p a {
+          font-size: 0.85vw;
+        }
+      }
+
+      .nav_lang p a {
+        color: white;
+      }
+
+      .nav_wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .nav_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 100px;
+        background-color: transparent;
+        z-index: 10;
+      }
+
+      .nav_logo {
+        max-width: 51.267px;
+        max-height: 44px;
+      }
+
+      .nav_logo svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nav_items {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 14px;
+
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+        -webkit-backdrop-filter: blur(27px);
+        /*change on responsive*/
+        margin-left: 100px;
+      }
+
+      .nav_items li {
+        list-style-type: none;
+      }
+
+      .nav_items li a {
+        text-decoration: none;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: #6d6d6d;
+      }
+
+      .nav_media-lang {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav_media {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3px;
+
+        text-decoration: none;
+      }
+
+      @keyframes colorChange {
+        0% {
+          fill: #ff511b;
+        }
+
+        50% {
+          fill: #2a2a2a;
+        }
+
+        100% {
+          fill: #ff511b;
+        }
+      }
+
+      .nav_media svg circle {
+        animation: colorChange 2s infinite;
+      }
+
+      .nav_media svg rect {
+        animation: colorChange 2s infinite 1s;
+      }
+
+      .nav_media p {
+        color: #6d6d6d;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .nav_lang {
+        padding: 12px 9px;
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .nav_lang p {
+        color: #c0c0c0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .language-text {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+
+      .english.active,
+      .armenian.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .english.inactive {
+        transform: translateX(-150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      .armenian.inactive {
+        transform: translateX(150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+
+      .o-hidden {
+        overflow: hidden;
+      }
+
+      .menu_mobile {
+        display: none;
+      }
+
+      @media (max-width: 1920px) {
+        .nav_container {
+          padding: 1vw 5.2vw;
+        }
+
+        .nav_items {
+          margin-left: 5.2vw;
+          gap: 0.78vw;
+          padding: 0.6vw 0.7vw 0.6vw 0.7vw;
+          border-radius: 0.7vw;
+        }
+
+        .nav_lang {
+          padding: 0.6vw 0.4vw;
+          border-radius: 0.78vw;
+        }
+
+        .nav_logo {
+          max-width: 2.6vw;
+          max-height: 2.2vw;
+        }
+
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 0.9vw;
+        }
+
+        .nav_media svg {
+          width: 1.8vw;
+          height: 0.8vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 1366px) {
+        .nav_container .nav_items {
+          padding: 0.1vw 0.7vw 0.4vw 0.7vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 835px) {
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 1.2vw;
+        }
+
+        .nav_items {
+          margin-left: 8.5vw;
+        }
+      }
+
+      @media (orientation: landscape) and (min-width: 600px) and (max-width: 1024px) {
+        .nav_items li {
+          display: flex;
+        }
+      }
+
+      .menu-ul {
+        display: none;
+      }
+
+      @media (max-width: 743px) {
+        .nav_wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 10;
+          height: 12.8vw;
+        }
+
+        .nav_container {
+          display: none;
+        }
+
+        .menu_mobile {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 3.1vw 4.8vw;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          position: relative;
+          z-index: 999;
+        }
+
+        .nav_logo {
+          max-width: 7.9vw;
+          max-height: 6.7vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 8.4vw;
+          height: 4vw;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        .hamburger span {
+          display: block;
+          height: 0.2vw;
+          width: 100%;
+          background: white;
+          transition: all 0.5s ease;
+        }
+
+        .hamburger.active span:first-child {
+          transform: rotate(45deg) translate(0.7vw, 0.7vw);
+        }
+
+        .hamburger.active span:last-child {
+          transform: rotate(-45deg) translate(0.8vw, -0.8vw);
+        }
+
+        .menu_fullscreen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100dvh;
+          background: black;
+          z-index: 99;
+          overflow-y: auto;
+          transition: all 0.8s ease-in-out;
+          transform: translateY(-100%);
+        }
+
+        .menu_fullscreen.active {
+          transform: translateY(0);
+          transition: all 0.8s ease-in-out;
+        }
+
+        .menu-ul.active {
+          height: 100dvh;
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 0s ease-in-out, opacity 0.8s ease-in-out,
+            height 0s ease-in-out;
+        }
+
+        .menu-ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+          z-index: 99;
+          opacity: 0;
+          transform: translateY(-200%);
+          transition: transform 0s ease-in-out 0.8s, opacity 0.8s ease-in-out,
+            height 0s ease-in-out 0.8s;
+          height: 100dvh;
+        }
+
+        .menu-ul ul {
+          list-style-type: none;
+          margin: 13vh 7.2vw 8.2vw 7.2vw;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1.2vw;
+
+          border-bottom: 1px solid #2a2a2a;
+          border-radius: 0;
+
+          height: -webkit-fill-available;
+        }
+
+        .menu-ul li {
+          transform: translateX(20px);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul.active li {
+          transform: translateX(0);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul li a {
+          color: #6d6d6d;
+          text-decoration: none;
+          font-size: 7.7vw;
+        }
+
+        .nav_media-lang {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: unset;
+
+          margin: 0 7.2vw 15.7vw 7.2vw;
+        }
+
+        .nav_media {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 2.4vw;
+
+          text-decoration: none;
+        }
+
+        .nav_media svg circle {
+          animation: colorChange 2s infinite;
+        }
+
+        .nav_media svg rect {
+          animation: colorChange 2s infinite 1s;
+        }
+
+        .nav_media p {
+          color: #6d6d6d;
+          font-size: 7.7vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_lang {
+          padding: 2.8vw 2.1vw;
+          border-radius: 3.6vw;
+          border: 1px solid #2a2a2a;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          cursor: pointer;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .nav_lang p {
+          color: #c0c0c0;
+          font-size: 3.8vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_items li a,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 3.8vw;
+        }
+
+        .nav_media svg {
+          width: 8.4vw;
+          height: 3.8vw;
+        }
+      }
+
+      .loader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        z-index: 999999999;
+        background-color: black;
+        overflow: visible;
+      }
+
+      .loader .wrapper-preloader {
+        width: 146px;
+        height: 128px;
+        z-index: 99999999;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(47 47 47 / 35%);
+      }
+
+      .loader .wrapper-preloader img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-orange {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ff511b;
+        width: 0;
+        height: 127px;
+        display: block;
+        animation: progressAnimation 8s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        50% {
+          width: 152px;
+        }
+
+        100% {
+          width: 0;
+        }
+      }
+
+      .click_here {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .success_click_here {
+        color: #7c7c7c !important;
+        text-decoration: none !important;
+      }
+      .am-header .nav_media p,
+      .am-header .nav_items li a {
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="wrapper-preloader">
+        <div class="bg-orange"></div>
+        <img src="/assets/loader.png" alt="" />
+      </div>
+    </div>
+    <script>
+      //start preloader function
+      document.body.classList.add("o-hidden");
+      if (window.location.pathname == "/ba") {
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            document.body.classList.remove("o-hidden");
+            document.querySelector(".loader").style.display = "none";
+          }, 2000);
+        });
+      } else {
+        window.onload = function () {
+          document.body.classList.remove("o-hidden");
+          document.querySelector(".loader").style.display = "none";
+        };
+      }
+      // end preloader function
+    </script>
+    <div class="nav_wrapper">
+      <div class="nav_container">
+        <div class="nav_logo">
+          <a href="/">
+            <svg
+              width="52"
+              height="44"
+              viewBox="0 0 52 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M43.2283 8.53529C41.7313 5.9404 39.5774 3.78543 36.9833 2.28713C34.3892 0.788818 31.4463 0 28.4506 0C25.4548 0 22.5119 0.788818 19.9178 2.28713C17.3237 3.78543 15.1698 5.9404 13.6729 8.53529V8.58803C17.359 8.88705 20.7864 10.6008 23.2373 13.3703C25.6882 16.1398 26.9723 19.7502 26.8208 23.4453C26.6693 27.1404 25.0939 30.6336 22.4246 33.1932C19.7552 35.7527 16.199 37.1801 12.5007 37.1764H9.14844C10.7135 39.3236 12.7711 41.0639 15.1483 42.251C17.5255 43.438 20.1529 44.0372 22.8097 43.9982H34.2028C37.1978 43.9978 40.1399 43.2092 42.7336 41.7116C45.3273 40.2141 47.4812 38.0604 48.979 35.4669C50.4768 32.8733 51.2657 29.9313 51.2665 26.9364C51.2673 23.9414 50.4799 20.999 48.9834 18.4047L43.2283 8.53529Z"
+                fill="#FF511B"
+              />
+              <path
+                d="M7.97638 18.4045L13.6436 8.5879C13.251 8.5586 12.8525 8.53516 12.4715 8.53516H0V37.1763H9.09577C8.69105 36.6292 8.31733 36.0598 7.97638 35.4708C6.44019 32.8895 5.62931 29.9415 5.62931 26.9377C5.62931 23.9339 6.44019 20.9858 7.97638 18.4045Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="nav_items">
+          <li id="home">
+            <a href="/">Home</a>
+          </li>
+          <li id="about">
+            <a href="/about">About</a>
+          </li>
+          <li id="ba">
+            <a href="/ba">Business areas</a>
+          </li>
+          <li id="investors">
+            <a href="/investors">Investors</a>
+          </li>
+          <li id="cr">
+            <a href="/cr">Sustainability</a>
+          </li>
+          <li id="contacts">
+            <a href="/contacts">Contacts</a>
+          </li>
+        </ul>
+
+        <div class="nav_media-lang">
+          <a href="/newsletter" class="nav_media">
+            <p>Media</p>
+            <svg
+              width="35"
+              height="16"
+              viewBox="0 0 35 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="27" cy="8" r="8" fill="#FF511B" />
+              <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+            </svg>
+          </a>
+
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="/change_language/en">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="/change_language/am">Arm</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu_mobile">
+        <div class="nav_logo">
+          <a href="/">
+            <svg
+              width="52"
+              height="44"
+              viewBox="0 0 52 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M43.2283 8.53529C41.7313 5.9404 39.5774 3.78543 36.9833 2.28713C34.3892 0.788818 31.4463 0 28.4506 0C25.4548 0 22.5119 0.788818 19.9178 2.28713C17.3237 3.78543 15.1698 5.9404 13.6729 8.53529V8.58803C17.359 8.88705 20.7864 10.6008 23.2373 13.3703C25.6882 16.1398 26.9723 19.7502 26.8208 23.4453C26.6693 27.1404 25.0939 30.6336 22.4246 33.1932C19.7552 35.7527 16.199 37.1801 12.5007 37.1764H9.14844C10.7135 39.3236 12.7711 41.0639 15.1483 42.251C17.5255 43.438 20.1529 44.0372 22.8097 43.9982H34.2028C37.1978 43.9978 40.1399 43.2092 42.7336 41.7116C45.3273 40.2141 47.4812 38.0604 48.979 35.4669C50.4768 32.8733 51.2657 29.9313 51.2665 26.9364C51.2673 23.9414 50.4799 20.999 48.9834 18.4047L43.2283 8.53529Z"
+                fill="#FF511B"
+              />
+              <path
+                d="M7.97638 18.4045L13.6436 8.5879C13.251 8.5586 12.8525 8.53516 12.4715 8.53516H0V37.1763H9.09577C8.69105 36.6292 8.31733 36.0598 7.97638 35.4708C6.44019 32.8895 5.62931 29.9415 5.62931 26.9377C5.62931 23.9339 6.44019 20.9858 7.97638 18.4045Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu(this)">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="menu_fullscreen" id="menuFullscreen"></div>
+
+      <div class="menu-ul">
+        <ul>
+          <li id="home">
+            <a href="/">Home</a>
+          </li>
+          <li id="about">
+            <a href="/about">About</a>
+          </li>
+          <li id="ba">
+            <a href="/ba">Business areas</a>
+          </li>
+          <li id="investors">
+            <a href="/investors">Investors</a>
+          </li>
+          <li id="cr">
+            <a href="/cr">Sustainability</a>
+          </li>
+          <li id="contacts">
+            <a href="/contacts">Contacts</a>
+          </li>
+          <li>
+            <a href="/newsletter" class="nav_media">
+              <p>Media</p>
+              <svg
+                width="35"
+                height="16"
+                viewBox="0 0 35 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="27" cy="8" r="8" fill="#FF511B" />
+                <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="nav_media-lang">
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="/change_language/en">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="/change_language/am">Arm</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu(element) {
+        element.classList.toggle("active");
+        var menu = document.getElementById("menuFullscreen");
+        var menuList = document.querySelector(".menu-ul");
+        if (element.classList.contains("active")) {
+          menu.classList.add("active");
+          menuList.classList.add("active");
+        } else {
+          menu.classList.remove("active");
+          menuList.classList.remove("active");
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/style/newsletter.css?v=1745335252" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--news main section-->
+
+    <!--news header and navigation-->
+
+    <!--news filters and total quantity-->
+
+    <section id="news-wrapper">
+      <div class="news-header">
+        <h1 class="">All Publications</h1>
+        <div class="news-buttons">
+          <button id="prevBtn" class="nav-btn">
+            <svg
+              width="21"
+              height="17"
+              viewBox="0 0 21 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.974121 8.59668C0.974121 8.40186 1.05615 8.22754 1.20996 8.08398L8.05957 1.21387C8.25439 1.01904 8.42871 0.947266 8.61328 0.947266C9.00293 0.947266 9.30029 1.23438 9.30029 1.61377C9.30029 1.80859 9.23877 1.98291 9.10547 2.11621L6.03955 5.21289L3.01465 8.02246L5.39355 7.90967H19.3389C19.7285 7.90967 20.0156 8.19678 20.0156 8.59668C20.0156 8.99658 19.7285 9.28369 19.3389 9.28369H5.39355L3.00439 9.1709L6.03955 11.9805L9.10547 15.0771C9.22852 15.2002 9.30029 15.3848 9.30029 15.5693C9.30029 15.9487 9.00293 16.2358 8.61328 16.2358C8.42871 16.2358 8.26465 16.1743 8.11084 16.0308L1.20996 9.10938C1.05615 8.96582 0.974121 8.7915 0.974121 8.59668Z"
+                fill="#FFF"
+              />
+            </svg>
+          </button>
+          <button id="nextBtn" class="nav-btn">
+            <svg
+              width="21"
+              height="17"
+              viewBox="0 0 21 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.0156 8.59668C20.0156 8.7915 19.9336 8.96582 19.7798 9.10938L12.8789 16.0308C12.7251 16.1743 12.561 16.2358 12.3765 16.2358C11.9868 16.2358 11.6997 15.9487 11.6997 15.5693C11.6997 15.3848 11.7612 15.2002 11.8843 15.0771L14.9502 11.9805L17.9854 9.1709L15.5962 9.28369H1.65088C1.26123 9.28369 0.974121 8.99658 0.974121 8.59668C0.974121 8.19678 1.26123 7.90967 1.65088 7.90967H15.5962L17.9751 8.02246L14.9502 5.21289L11.8843 2.11621C11.7612 1.98291 11.6997 1.80859 11.6997 1.61377C11.6997 1.23438 11.9868 0.947266 12.3765 0.947266C12.561 0.947266 12.7354 1.01904 12.9302 1.21387L19.7798 8.08398C19.9336 8.22754 20.0156 8.40186 20.0156 8.59668Z"
+                fill="#FFF"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="card related"
+              onclick="window.location='/news/id-group-made-a-strategic-investment-in-tomsarkgh-am'"
+            >
+              <img
+                class="card-bg"
+                src="/uploads/news/1716797588_04e420e1f4aadbec8eff.png"
+                alt="ID Group made a strategic investment in tomsarkgh.am"
+              />
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="10" height="10" rx="3" fill="black" />
+                    </svg>
+                    News
+                  </span>
+                  <h3>ID Group made a strategic investment in tomsarkgh.am</h3>
+                </div>
+                <div class="card-footer">
+                  <p class="">
+                    Armenia's largest ticketing platform Tomsarkgh.am announced
+                    that it has attracted a strategic equity investment from ID
+                    Group.
+                  </p>
+                  <a
+                    href="/news/id-group-made-a-strategic-investment-in-tomsarkgh-am"
+                    >See more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="card related"
+              onclick="window.location='/news/the-power-of-one-dram-to-city-of-smile-fund'"
+            >
+              <img
+                class="card-bg"
+                src="/uploads/news/1714656592_48e159a87371d9e524b0.png"
+                alt="The Power of One Dram to City of Smile Fund"
+              />
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="10" height="10" rx="3" fill="black" />
+                    </svg>
+                    News
+                  </span>
+                  <h3>The Power of One Dram to City of Smile Fund</h3>
+                </div>
+                <div class="card-footer">
+                  <p class="">
+                    IDBank and Idram donated the accumulated AMD 3,780,052 to
+                    the “City of Smile” Foundation to support children fighting
+                    cancer.
+                  </p>
+                  <a href="/news/the-power-of-one-dram-to-city-of-smile-fund"
+                    >See more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="card related"
+              onclick="window.location='/news/the-power-of-one-dram-to-armenian-mothers'"
+            >
+              <img
+                class="card-bg"
+                src="/uploads/news/1714656611_6d90f7162a0817726e19.png"
+                alt="The Power of One Dram to Armenian Mothers"
+              />
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="10" height="10" rx="3" fill="black" />
+                    </svg>
+                    News
+                  </span>
+                  <h3>The Power of One Dram to Armenian Mothers</h3>
+                </div>
+                <div class="card-footer">
+                  <p class="">
+                    IDBank and Idram sum up the January program of the Power of
+                    One Dram initiative. The amount gathered during January, AMD
+                    3,665,972 was d...
+                  </p>
+                  <a href="/news/the-power-of-one-dram-to-armenian-mothers"
+                    >See more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="card related"
+              onclick="window.location='/news/the-power-of-one-dram-to-health-fund-for-children-of-armenia'"
+            >
+              <img
+                class="card-bg"
+                src="/uploads/news/1714656627_f71d7d514afa4c6fabd8.png"
+                alt="The Power of One Dram to Health Fund for Children of Armenia"
+              />
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="10" height="10" rx="3" fill="black" />
+                    </svg>
+                    Banking
+                  </span>
+                  <h3>
+                    The Power of One Dram to Health Fund for Children of Armenia
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <p class="">
+                    Idram and IDBank sum up the results of the November program
+                    of the “The Power of One Dram” initiative.
+                  </p>
+                  <a
+                    href="/news/the-power-of-one-dram-to-health-fund-for-children-of-armenia"
+                    >See more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="card related"
+              onclick="window.location='/news/idbank-and-idram-consolidated-within-id-group-armenian-holding'"
+            >
+              <img
+                class="card-bg"
+                src="/uploads/news/1715672477_efc77939d74117aabe10.png"
+                alt="IDBank and Idram consolidated within ID Group Armenian Holding "
+              />
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="10" height="10" rx="3" fill="black" />
+                    </svg>
+                    News
+                  </span>
+                  <h3>
+                    IDBank and Idram consolidated within ID Group Armenian
+                    Holding
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <p class="">
+                    Idram and IDBank consolidated within ID Group Armenian
+                    holding, which currently controls 100% of the shares of
+                    Idram and IDBank.
+                  </p>
+                  <a
+                    href="/news/idbank-and-idram-consolidated-within-id-group-armenian-holding"
+                    >See more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-footer">
+        <div class="news-filters">
+          <span
+            class="filter active"
+            data-filter="all"
+            data-text="All Publications"
+            >All</span
+          >
+          <span class="filter" data-filter="related" data-text="Related news">
+            Related news
+          </span>
+          <span class="filter" data-filter="statements" data-text="Statements">
+            Statements
+          </span>
+          <span id="news-icon">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1953 8.5C16.1953 12.7891 12.6484 16.3359 8.35937 16.3359C4.0625 16.3359 0.523437 12.7969 0.523437 8.50781C0.523437 4.21094 4.0625 0.664062 8.35937 0.664062C12.6484 0.664062 16.1953 4.21094 16.1953 8.5ZM15.1797 8.5C15.1797 4.71875 12.1328 1.67187 8.35937 1.67187C4.57812 1.67187 1.53125 4.72656 1.53125 8.50781C1.53125 12.2812 4.57812 15.3203 8.35937 15.3203C12.1328 15.3203 15.1797 12.2812 15.1797 8.5ZM4.42969 8.5C4.42969 8.22656 4.61719 8.03906 4.89062 8.03906L9.42187 8.03906L10.8672 8.08594L9.89844 7.21875L8.76562 6.09375C8.67969 6.00781 8.63281 5.90625 8.63281 5.77344C8.63281 5.52344 8.82031 5.32812 9.0625 5.32812C9.19531 5.32812 9.29687 5.375 9.38281 5.45312L12.0625 8.14844C12.1797 8.25781 12.2344 8.36719 12.2344 8.5C12.2344 8.625 12.1797 8.72656 12.0625 8.84375L9.38281 11.5391C9.29687 11.6172 9.19531 11.6562 9.0625 11.6562C8.82031 11.6562 8.63281 11.4687 8.63281 11.2187C8.63281 11.0859 8.67969 10.9844 8.76562 10.8984L9.89844 9.77344L10.8594 8.91406L9.42187 8.95312L4.89062 8.95312C4.61719 8.95312 4.42969 8.76562 4.42969 8.5Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <div class="news-buttons_mobile">
+          <button id="prevBtn" class="nav-btn">
+            <svg
+              width="21"
+              height="17"
+              viewBox="0 0 21 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.974121 8.59668C0.974121 8.40186 1.05615 8.22754 1.20996 8.08398L8.05957 1.21387C8.25439 1.01904 8.42871 0.947266 8.61328 0.947266C9.00293 0.947266 9.30029 1.23438 9.30029 1.61377C9.30029 1.80859 9.23877 1.98291 9.10547 2.11621L6.03955 5.21289L3.01465 8.02246L5.39355 7.90967H19.3389C19.7285 7.90967 20.0156 8.19678 20.0156 8.59668C20.0156 8.99658 19.7285 9.28369 19.3389 9.28369H5.39355L3.00439 9.1709L6.03955 11.9805L9.10547 15.0771C9.22852 15.2002 9.30029 15.3848 9.30029 15.5693C9.30029 15.9487 9.00293 16.2358 8.61328 16.2358C8.42871 16.2358 8.26465 16.1743 8.11084 16.0308L1.20996 9.10938C1.05615 8.96582 0.974121 8.7915 0.974121 8.59668Z"
+                fill="#FFF"
+              />
+            </svg>
+          </button>
+          <button id="nextBtn" class="nav-btn">
+            <svg
+              width="21"
+              height="17"
+              viewBox="0 0 21 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.0156 8.59668C20.0156 8.7915 19.9336 8.96582 19.7798 9.10938L12.8789 16.0308C12.7251 16.1743 12.561 16.2358 12.3765 16.2358C11.9868 16.2358 11.6997 15.9487 11.6997 15.5693C11.6997 15.3848 11.7612 15.2002 11.8843 15.0771L14.9502 11.9805L17.9854 9.1709L15.5962 9.28369H1.65088C1.26123 9.28369 0.974121 8.99658 0.974121 8.59668C0.974121 8.19678 1.26123 7.90967 1.65088 7.90967H15.5962L17.9751 8.02246L14.9502 5.21289L11.8843 2.11621C11.7612 1.98291 11.6997 1.80859 11.6997 1.61377C11.6997 1.23438 11.9868 0.947266 12.3765 0.947266C12.561 0.947266 12.7354 1.01904 12.9302 1.21387L19.7798 8.08398C19.9336 8.22754 20.0156 8.40186 20.0156 8.59668Z"
+                fill="#FFF"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--jQuery-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: false,
+        navigation: {
+          nextEl: "#nextBtn",
+          prevEl: "#prevBtn",
+        },
+        slidesPerView: 1.2,
+        // spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+          // when window width is => 768px
+          744: {
+            slidesPerView: 3.8,
+          },
+        },
+      });
+    </script>
+
+    <script>
+      // document.addEventListener('DOMContentLoaded', function () {
+      //     const currentYear = new Date().getFullYear(); // Gets the current year
+      //     document.getElementById('year').textContent = currentYear; // Sets the current year as the text content of the #year element
+      // });
+
+      function getAverageColor(img, callback) {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const image = new Image();
+        image.crossOrigin = "Anonymous";
+        image.onload = function () {
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+          ctx.drawImage(this, 0, 0);
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          let r = 0,
+            g = 0,
+            b = 0;
+          for (let i = 0; i < imageData.data.length; i += 4) {
+            r += imageData.data[i];
+            g += imageData.data[i + 1];
+            b += imageData.data[i + 2];
+          }
+          r = Math.floor(r / (imageData.data.length / 4));
+          g = Math.floor(g / (imageData.data.length / 4));
+          b = Math.floor(b / (imageData.data.length / 4));
+          const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+          callback(luminance > 0.5 ? "black" : "white"); // Light background => Black text, else white text
+        };
+        image.src = img.src;
+      }
+      //news
+      $(document).ready(function () {
+        //cards color regarding
+        $(".card-bg").each(function () {
+          const img = this; // Current image
+          const card = $(this).closest(".card");
+          getAverageColor(img, function (color) {
+            card.find(".card-header, .card-footer").css("color", color);
+            card.find(".card-header span svg rect").css("fill", color);
+            card.find(".card-footer a").css("background", color); // Adjusts text color based on background image
+            const reverseColor = color === "black" ? "white" : "black";
+            card.find(".card-footer a").css("color", reverseColor); // Applies reversed color
+          });
+        });
+
+        // Filter functionality
+        $(".filter").click(function () {
+          const filter = $(this).data("filter");
+          const filterText = $(this).data("text");
+          $(".news-header h1").text(filterText);
+          $(".filter").removeClass("active");
+          $(this).addClass("active");
+          $(".card").each(function () {
+            if (filter === "all" || $(this).hasClass(filter)) {
+              $(this).show();
+              $(this).parent().show();
+            } else {
+              // $('.swiper-wrapper').css("transform","translate3d(0px, 0px, 0px)")
+              $(this).hide();
+              $(this).parent().hide();
+            }
+          });
+          swiper.update();
+          swiper.slideTo(0, 0);
+        });
+      });
+    </script>
+    <script>
+      $(".click_here").click(function () {
+        $(this).addClass("success_click_here");
+      });
+      document
+        .querySelector(".nav_lang")
+        .addEventListener("click", function () {
+          var english = document.querySelector(".language-text.english");
+          var armenian = document.querySelector(".language-text.armenian");
+
+          if (english.classList.contains("active")) {
+            english.classList.remove("active");
+            english.classList.add("inactive");
+            armenian.classList.remove("inactive");
+            armenian.classList.add("active");
+          } else {
+            armenian.classList.remove("active");
+            armenian.classList.add("inactive");
+            english.classList.remove("inactive");
+            english.classList.add("active");
+          }
+        });
+    </script>
+  </body>
+</html>

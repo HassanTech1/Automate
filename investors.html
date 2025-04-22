@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="ID Group" />
+    <meta property="og:title" content="ID Group" />
+    <meta
+      property="og:description"
+      content="Welcome to ID Group - Your partner for innovative fintech solutions"
+    />
+    <meta property="og:image" content="/main_logo.png" />
+    <meta property="og:url" content="https://idgroup.am/investors" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:alt" content="ID Group" />
+    <title>ID Group</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/fav/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <style>
+      @media (min-width: 2240px) {
+        .nav_items li a {
+          font-size: 0.85vw !important;
+        }
+        .nav_media p {
+          font-size: 0.85vw !important;
+        }
+        .nav_lang p a {
+          font-size: 0.85vw;
+        }
+      }
+
+      .nav_lang p a {
+        color: white;
+      }
+
+      .nav_wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .nav_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 100px;
+        background-color: transparent;
+        z-index: 10;
+      }
+
+      .nav_logo {
+        max-width: 51.267px;
+        max-height: 44px;
+      }
+
+      .nav_logo svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nav_items {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 14px;
+
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+        -webkit-backdrop-filter: blur(27px);
+        /*change on responsive*/
+        margin-left: 100px;
+      }
+
+      .nav_items li {
+        list-style-type: none;
+      }
+
+      .nav_items li a {
+        text-decoration: none;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: #6d6d6d;
+      }
+
+      .nav_media-lang {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav_media {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3px;
+
+        text-decoration: none;
+      }
+
+      @keyframes colorChange {
+        0% {
+          fill: #ff511b;
+        }
+
+        50% {
+          fill: #2a2a2a;
+        }
+
+        100% {
+          fill: #ff511b;
+        }
+      }
+
+      .nav_media svg circle {
+        animation: colorChange 2s infinite;
+      }
+
+      .nav_media svg rect {
+        animation: colorChange 2s infinite 1s;
+      }
+
+      .nav_media p {
+        color: #6d6d6d;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .nav_lang {
+        padding: 12px 9px;
+        border-radius: 15px;
+        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(27px);
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .nav_lang p {
+        color: #c0c0c0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .language-text {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+
+      .english.active,
+      .armenian.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .english.inactive {
+        transform: translateX(-150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      .armenian.inactive {
+        transform: translateX(150%);
+        position: absolute;
+        opacity: 0;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+
+      .o-hidden {
+        overflow: hidden;
+      }
+
+      .menu_mobile {
+        display: none;
+      }
+
+      @media (max-width: 1920px) {
+        .nav_container {
+          padding: 1vw 5.2vw;
+        }
+
+        .nav_items {
+          margin-left: 5.2vw;
+          gap: 0.78vw;
+          padding: 0.6vw 0.7vw 0.6vw 0.7vw;
+          border-radius: 0.7vw;
+        }
+
+        .nav_lang {
+          padding: 0.6vw 0.4vw;
+          border-radius: 0.78vw;
+        }
+
+        .nav_logo {
+          max-width: 2.6vw;
+          max-height: 2.2vw;
+        }
+
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 0.9vw;
+        }
+
+        .nav_media svg {
+          width: 1.8vw;
+          height: 0.8vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 1366px) {
+        .nav_container .nav_items {
+          padding: 0.1vw 0.7vw 0.4vw 0.7vw;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 835px) {
+        .nav_items li a,
+        .nav_media p,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 1.2vw;
+        }
+
+        .nav_items {
+          margin-left: 8.5vw;
+        }
+      }
+
+      @media (orientation: landscape) and (min-width: 600px) and (max-width: 1024px) {
+        .nav_items li {
+          display: flex;
+        }
+      }
+
+      .menu-ul {
+        display: none;
+      }
+
+      @media (max-width: 743px) {
+        .nav_wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 10;
+          height: 12.8vw;
+        }
+
+        .nav_container {
+          display: none;
+        }
+
+        .menu_mobile {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 3.1vw 4.8vw;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          position: relative;
+          z-index: 999;
+        }
+
+        .nav_logo {
+          max-width: 7.9vw;
+          max-height: 6.7vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 8.4vw;
+          height: 4vw;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        .hamburger span {
+          display: block;
+          height: 0.2vw;
+          width: 100%;
+          background: white;
+          transition: all 0.5s ease;
+        }
+
+        .hamburger.active span:first-child {
+          transform: rotate(45deg) translate(0.7vw, 0.7vw);
+        }
+
+        .hamburger.active span:last-child {
+          transform: rotate(-45deg) translate(0.8vw, -0.8vw);
+        }
+
+        .menu_fullscreen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100dvh;
+          background: black;
+          z-index: 99;
+          overflow-y: auto;
+          transition: all 0.8s ease-in-out;
+          transform: translateY(-100%);
+        }
+
+        .menu_fullscreen.active {
+          transform: translateY(0);
+          transition: all 0.8s ease-in-out;
+        }
+
+        .menu-ul.active {
+          height: 100dvh;
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 0s ease-in-out, opacity 0.8s ease-in-out,
+            height 0s ease-in-out;
+        }
+
+        .menu-ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+          z-index: 99;
+          opacity: 0;
+          transform: translateY(-200%);
+          transition: transform 0s ease-in-out 0.8s, opacity 0.8s ease-in-out,
+            height 0s ease-in-out 0.8s;
+          height: 100dvh;
+        }
+
+        .menu-ul ul {
+          list-style-type: none;
+          margin: 13vh 7.2vw 8.2vw 7.2vw;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1.2vw;
+
+          border-bottom: 1px solid #2a2a2a;
+          border-radius: 0;
+
+          height: -webkit-fill-available;
+        }
+
+        .menu-ul li {
+          transform: translateX(20px);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul.active li {
+          transform: translateX(0);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .menu-ul li a {
+          color: #6d6d6d;
+          text-decoration: none;
+          font-size: 7.7vw;
+        }
+
+        .nav_media-lang {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: unset;
+
+          margin: 0 7.2vw 15.7vw 7.2vw;
+        }
+
+        .nav_media {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 2.4vw;
+
+          text-decoration: none;
+        }
+
+        .nav_media svg circle {
+          animation: colorChange 2s infinite;
+        }
+
+        .nav_media svg rect {
+          animation: colorChange 2s infinite 1s;
+        }
+
+        .nav_media p {
+          color: #6d6d6d;
+          font-size: 7.7vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_lang {
+          padding: 2.8vw 2.1vw;
+          border-radius: 3.6vw;
+          border: 1px solid #2a2a2a;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(27px);
+          -webkit-backdrop-filter: blur(27px);
+          cursor: pointer;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .nav_lang p {
+          color: #c0c0c0;
+          font-size: 3.8vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .nav_items li a,
+        .nav_lang p,
+        .nav_lang p a {
+          font-size: 3.8vw;
+        }
+
+        .nav_media svg {
+          width: 8.4vw;
+          height: 3.8vw;
+        }
+      }
+
+      .loader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        z-index: 999999999;
+        background-color: black;
+        overflow: visible;
+      }
+
+      .loader .wrapper-preloader {
+        width: 146px;
+        height: 128px;
+        z-index: 99999999;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(47 47 47 / 35%);
+      }
+
+      .loader .wrapper-preloader img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-orange {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ff511b;
+        width: 0;
+        height: 127px;
+        display: block;
+        animation: progressAnimation 8s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0;
+        }
+
+        50% {
+          width: 152px;
+        }
+
+        100% {
+          width: 0;
+        }
+      }
+
+      .click_here {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .success_click_here {
+        color: #7c7c7c !important;
+        text-decoration: none !important;
+      }
+      .am-header .nav_media p,
+      .am-header .nav_items li a {
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="wrapper-preloader">
+        <div class="bg-orange"></div>
+        <img src="/assets/loader.png" alt="" />
+      </div>
+    </div>
+    <script>
+      //start preloader function
+      document.body.classList.add("o-hidden");
+      if (window.location.pathname == "/ba") {
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            document.body.classList.remove("o-hidden");
+            document.querySelector(".loader").style.display = "none";
+          }, 2000);
+        });
+      } else {
+        window.onload = function () {
+          document.body.classList.remove("o-hidden");
+          document.querySelector(".loader").style.display = "none";
+        };
+      }
+      // end preloader function
+    </script>
+    <div class="nav_wrapper">
+      <div class="nav_container">
+        <div class="nav_logo">
+          <a href="/">
+            <svg
+              width="52"
+              height="44"
+              viewBox="0 0 52 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M43.2283 8.53529C41.7313 5.9404 39.5774 3.78543 36.9833 2.28713C34.3892 0.788818 31.4463 0 28.4506 0C25.4548 0 22.5119 0.788818 19.9178 2.28713C17.3237 3.78543 15.1698 5.9404 13.6729 8.53529V8.58803C17.359 8.88705 20.7864 10.6008 23.2373 13.3703C25.6882 16.1398 26.9723 19.7502 26.8208 23.4453C26.6693 27.1404 25.0939 30.6336 22.4246 33.1932C19.7552 35.7527 16.199 37.1801 12.5007 37.1764H9.14844C10.7135 39.3236 12.7711 41.0639 15.1483 42.251C17.5255 43.438 20.1529 44.0372 22.8097 43.9982H34.2028C37.1978 43.9978 40.1399 43.2092 42.7336 41.7116C45.3273 40.2141 47.4812 38.0604 48.979 35.4669C50.4768 32.8733 51.2657 29.9313 51.2665 26.9364C51.2673 23.9414 50.4799 20.999 48.9834 18.4047L43.2283 8.53529Z"
+                fill="#FF511B"
+              />
+              <path
+                d="M7.97638 18.4045L13.6436 8.5879C13.251 8.5586 12.8525 8.53516 12.4715 8.53516H0V37.1763H9.09577C8.69105 36.6292 8.31733 36.0598 7.97638 35.4708C6.44019 32.8895 5.62931 29.9415 5.62931 26.9377C5.62931 23.9339 6.44019 20.9858 7.97638 18.4045Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="nav_items">
+          <li id="home">
+            <a href="/">Home</a>
+          </li>
+          <li id="about">
+            <a href="/about">About</a>
+          </li>
+          <li id="ba">
+            <a href="/ba">Business areas</a>
+          </li>
+          <li id="investors">
+            <a href="/investors">Investors</a>
+          </li>
+          <li id="cr">
+            <a href="/cr">Sustainability</a>
+          </li>
+          <li id="contacts">
+            <a href="/contacts">Contacts</a>
+          </li>
+        </ul>
+
+        <div class="nav_media-lang">
+          <a href="/newsletter" class="nav_media">
+            <p>Media</p>
+            <svg
+              width="35"
+              height="16"
+              viewBox="0 0 35 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="27" cy="8" r="8" fill="#FF511B" />
+              <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+            </svg>
+          </a>
+
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="/change_language/en">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="/change_language/am">Arm</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu_mobile">
+        <div class="nav_logo">
+          <a href="/">
+            <svg
+              width="52"
+              height="44"
+              viewBox="0 0 52 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M43.2283 8.53529C41.7313 5.9404 39.5774 3.78543 36.9833 2.28713C34.3892 0.788818 31.4463 0 28.4506 0C25.4548 0 22.5119 0.788818 19.9178 2.28713C17.3237 3.78543 15.1698 5.9404 13.6729 8.53529V8.58803C17.359 8.88705 20.7864 10.6008 23.2373 13.3703C25.6882 16.1398 26.9723 19.7502 26.8208 23.4453C26.6693 27.1404 25.0939 30.6336 22.4246 33.1932C19.7552 35.7527 16.199 37.1801 12.5007 37.1764H9.14844C10.7135 39.3236 12.7711 41.0639 15.1483 42.251C17.5255 43.438 20.1529 44.0372 22.8097 43.9982H34.2028C37.1978 43.9978 40.1399 43.2092 42.7336 41.7116C45.3273 40.2141 47.4812 38.0604 48.979 35.4669C50.4768 32.8733 51.2657 29.9313 51.2665 26.9364C51.2673 23.9414 50.4799 20.999 48.9834 18.4047L43.2283 8.53529Z"
+                fill="#FF511B"
+              />
+              <path
+                d="M7.97638 18.4045L13.6436 8.5879C13.251 8.5586 12.8525 8.53516 12.4715 8.53516H0V37.1763H9.09577C8.69105 36.6292 8.31733 36.0598 7.97638 35.4708C6.44019 32.8895 5.62931 29.9415 5.62931 26.9377C5.62931 23.9339 6.44019 20.9858 7.97638 18.4045Z"
+                fill="#FF511B"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu(this)">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="menu_fullscreen" id="menuFullscreen"></div>
+
+      <div class="menu-ul">
+        <ul>
+          <li id="home">
+            <a href="/">Home</a>
+          </li>
+          <li id="about">
+            <a href="/about">About</a>
+          </li>
+          <li id="ba">
+            <a href="/ba">Business areas</a>
+          </li>
+          <li id="investors">
+            <a href="/investors">Investors</a>
+          </li>
+          <li id="cr">
+            <a href="/cr">Sustainability</a>
+          </li>
+          <li id="contacts">
+            <a href="/contacts">Contacts</a>
+          </li>
+          <li>
+            <a href="/newsletter" class="nav_media">
+              <p>Media</p>
+              <svg
+                width="35"
+                height="16"
+                viewBox="0 0 35 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="27" cy="8" r="8" fill="#FF511B" />
+                <rect width="16" height="16" rx="3" fill="#2A2A2A" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="nav_media-lang">
+          <div class="nav_lang">
+            <p class="language-text english inactive">
+              <a href="/change_language/en">Eng</a>
+            </p>
+            <p class="language-text armenian active">
+              <a href="/change_language/am">Arm</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu(element) {
+        element.classList.toggle("active");
+        var menu = document.getElementById("menuFullscreen");
+        var menuList = document.querySelector(".menu-ul");
+        if (element.classList.contains("active")) {
+          menu.classList.add("active");
+          menuList.classList.add("active");
+        } else {
+          menu.classList.remove("active");
+          menuList.classList.remove("active");
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/style/investors.css?v=1745335151" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <section id="news-wrapper">
+      <div class="news-header">
+        <h1>Discover financial opportunities with ID Group.</h1>
+        <div class="news-footer">
+          <div class="news-filters">
+            <span class="filter active" data-filter="y_2023">2023</span>
+            <span class="underline"></span>
+          </div>
+          <p>Find our company reports here</p>
+        </div>
+      </div>
+
+      <h1 class="news-header_mobile">
+        Discover financial opportunities with ID Group.
+      </h1>
+
+      <!--    <div class="slider-container">-->
+      <!--        <div class="slider-wrapper">-->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide y_2023">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="6" cy="6" r="6" fill="white" />
+                    </svg>
+                    2023
+                  </span>
+                  <h3>IDBank - Independent Auditor's Report 2023</h3>
+                </div>
+                <img
+                  class="card-bg"
+                  src="/uploads/reports/image/1714741232_c0b05096c9d16b973dc5.png"
+                  alt="IDBank - Independent Auditor's Report 2023"
+                />
+                <div class="card-footer">
+                  <p>Independent Auditor's Report for IDBank 2023</p>
+                  <div class="card-footer_reports">
+                    <div class="pdf">
+                      <a
+                        href="/uploads/reports/pdf/1714741232/Annual audited financial statments.pdf"
+                        download="Annual audited financial statments.pdf"
+                      >
+                        <p>PDF Report</p>
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.19629 14.0371C3.38867 14.0371 0.223633 10.8721 0.223633 7.06445C0.223633 3.25 3.38184 0.0917969 7.18945 0.0917969C11.0039 0.0917969 14.1689 3.25 14.1689 7.06445C14.1689 10.8721 11.0107 14.0371 7.19629 14.0371ZM7.19629 12.875C10.4229 12.875 13.0068 10.291 13.0068 7.06445C13.0068 3.83789 10.416 1.25391 7.18945 1.25391C3.96289 1.25391 1.39258 3.83789 1.39258 7.06445C1.39258 10.291 3.96973 12.875 7.19629 12.875ZM7.19629 11.0703C7.08008 11.0703 6.92969 11.0225 6.7998 10.8857L4.02441 7.93945C3.86719 7.76855 3.79199 7.61816 3.79199 7.43359C3.79199 7.1875 3.96973 7.00293 4.22266 7.00293H5.7334V3.91309C5.7334 3.37305 6.03418 3.05859 6.56055 3.05859H7.8252C8.35156 3.05859 8.65918 3.37305 8.65918 3.91309V7.00293H10.1562C10.4023 7.00293 10.6006 7.1875 10.6006 7.44727C10.6006 7.625 10.5254 7.74805 10.3408 7.93945L7.59961 10.8857C7.46289 11.0225 7.31934 11.0703 7.19629 11.0703Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="desktop_version">
+                      <a
+                        href="/uploads/reports/pdf/1714741232/Annual audited financial statments.pdf"
+                        target="_blank"
+                      >
+                        <p>Open in Desktop Version</p>
+                        <svg
+                          width="17"
+                          height="14"
+                          viewBox="0 0 17 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.88965 13.3604C1.46094 13.3604 0.743164 12.6562 0.743164 11.248V2.89453C0.743164 1.48633 1.46094 0.775391 2.88965 0.775391H14.7158C16.1514 0.775391 16.8623 1.48633 16.8623 2.89453V11.248C16.8623 12.6562 16.1514 13.3604 14.7158 13.3604H2.88965ZM2.90332 12.2598H14.7021C15.3789 12.2598 15.7617 11.8975 15.7617 11.1865V2.95605C15.7617 2.24512 15.3789 1.87598 14.7021 1.87598H2.90332C2.21973 1.87598 1.84375 2.24512 1.84375 2.95605V11.1865C1.84375 11.8975 2.21973 12.2598 2.90332 12.2598ZM7.22363 10.6328C6.92285 10.6328 6.72461 10.4209 6.72461 10.0996V9.00586L6.82715 7.94629L5.84277 8.99902L3.77832 11.0566C3.68262 11.1523 3.55957 11.2139 3.39551 11.2139C3.08789 11.2139 2.88965 11.0156 2.88965 10.708C2.88965 10.5713 2.95801 10.4346 3.05371 10.3389L5.11816 8.27441L6.18457 7.2832L5.17285 7.39258H4.02441C3.69629 7.39258 3.48438 7.19434 3.48438 6.89355C3.48438 6.59277 3.68945 6.39453 4.01074 6.39453H7.15527C7.50391 6.39453 7.72949 6.55176 7.72949 6.95508V10.0859C7.72949 10.4004 7.52441 10.6328 7.22363 10.6328Z"
+                            fill="#6A6A6A"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide y_2023">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="6" cy="6" r="6" fill="white" />
+                    </svg>
+                    2023
+                  </span>
+                  <h3>Report</h3>
+                </div>
+                <img
+                  class="card-bg"
+                  src="/uploads/reports/image/1727770643_b12b91876e70eaa95229.png"
+                  alt="Report"
+                />
+                <div class="card-footer">
+                  <p>
+                    Annual financial report and independent auditor's report
+                  </p>
+                  <div class="card-footer_reports">
+                    <div class="pdf">
+                      <a
+                        href="/uploads/reports/pdf/1727770643/FS_ARM_IDG 2023.pdf"
+                        download="FS_ARM_IDG 2023.pdf"
+                      >
+                        <p>PDF Report</p>
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.19629 14.0371C3.38867 14.0371 0.223633 10.8721 0.223633 7.06445C0.223633 3.25 3.38184 0.0917969 7.18945 0.0917969C11.0039 0.0917969 14.1689 3.25 14.1689 7.06445C14.1689 10.8721 11.0107 14.0371 7.19629 14.0371ZM7.19629 12.875C10.4229 12.875 13.0068 10.291 13.0068 7.06445C13.0068 3.83789 10.416 1.25391 7.18945 1.25391C3.96289 1.25391 1.39258 3.83789 1.39258 7.06445C1.39258 10.291 3.96973 12.875 7.19629 12.875ZM7.19629 11.0703C7.08008 11.0703 6.92969 11.0225 6.7998 10.8857L4.02441 7.93945C3.86719 7.76855 3.79199 7.61816 3.79199 7.43359C3.79199 7.1875 3.96973 7.00293 4.22266 7.00293H5.7334V3.91309C5.7334 3.37305 6.03418 3.05859 6.56055 3.05859H7.8252C8.35156 3.05859 8.65918 3.37305 8.65918 3.91309V7.00293H10.1562C10.4023 7.00293 10.6006 7.1875 10.6006 7.44727C10.6006 7.625 10.5254 7.74805 10.3408 7.93945L7.59961 10.8857C7.46289 11.0225 7.31934 11.0703 7.19629 11.0703Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="desktop_version">
+                      <a
+                        href="/uploads/reports/pdf/1727770643/FS_ARM_IDG 2023.pdf"
+                        target="_blank"
+                      >
+                        <p>Open in Desktop Version</p>
+                        <svg
+                          width="17"
+                          height="14"
+                          viewBox="0 0 17 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.88965 13.3604C1.46094 13.3604 0.743164 12.6562 0.743164 11.248V2.89453C0.743164 1.48633 1.46094 0.775391 2.88965 0.775391H14.7158C16.1514 0.775391 16.8623 1.48633 16.8623 2.89453V11.248C16.8623 12.6562 16.1514 13.3604 14.7158 13.3604H2.88965ZM2.90332 12.2598H14.7021C15.3789 12.2598 15.7617 11.8975 15.7617 11.1865V2.95605C15.7617 2.24512 15.3789 1.87598 14.7021 1.87598H2.90332C2.21973 1.87598 1.84375 2.24512 1.84375 2.95605V11.1865C1.84375 11.8975 2.21973 12.2598 2.90332 12.2598ZM7.22363 10.6328C6.92285 10.6328 6.72461 10.4209 6.72461 10.0996V9.00586L6.82715 7.94629L5.84277 8.99902L3.77832 11.0566C3.68262 11.1523 3.55957 11.2139 3.39551 11.2139C3.08789 11.2139 2.88965 11.0156 2.88965 10.708C2.88965 10.5713 2.95801 10.4346 3.05371 10.3389L5.11816 8.27441L6.18457 7.2832L5.17285 7.39258H4.02441C3.69629 7.39258 3.48438 7.19434 3.48438 6.89355C3.48438 6.59277 3.68945 6.39453 4.01074 6.39453H7.15527C7.50391 6.39453 7.72949 6.55176 7.72949 6.95508V10.0859C7.72949 10.4004 7.52441 10.6328 7.22363 10.6328Z"
+                            fill="#6A6A6A"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide y_2023">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="6" cy="6" r="6" fill="white" />
+                    </svg>
+                    2023
+                  </span>
+                  <h3>Report</h3>
+                </div>
+                <img
+                  class="card-bg"
+                  src="/uploads/reports/image/1727770689_59b67cc83eacbecd35ba.png"
+                  alt="Report"
+                />
+                <div class="card-footer">
+                  <p>
+                    Annual financial report and independent auditor's report
+                  </p>
+                  <div class="card-footer_reports">
+                    <div class="pdf">
+                      <a
+                        href="/uploads/reports/pdf/1727770689/FS_ARM_IDG 2023.pdf"
+                        download="FS_ARM_IDG 2023.pdf"
+                      >
+                        <p>PDF Report</p>
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.19629 14.0371C3.38867 14.0371 0.223633 10.8721 0.223633 7.06445C0.223633 3.25 3.38184 0.0917969 7.18945 0.0917969C11.0039 0.0917969 14.1689 3.25 14.1689 7.06445C14.1689 10.8721 11.0107 14.0371 7.19629 14.0371ZM7.19629 12.875C10.4229 12.875 13.0068 10.291 13.0068 7.06445C13.0068 3.83789 10.416 1.25391 7.18945 1.25391C3.96289 1.25391 1.39258 3.83789 1.39258 7.06445C1.39258 10.291 3.96973 12.875 7.19629 12.875ZM7.19629 11.0703C7.08008 11.0703 6.92969 11.0225 6.7998 10.8857L4.02441 7.93945C3.86719 7.76855 3.79199 7.61816 3.79199 7.43359C3.79199 7.1875 3.96973 7.00293 4.22266 7.00293H5.7334V3.91309C5.7334 3.37305 6.03418 3.05859 6.56055 3.05859H7.8252C8.35156 3.05859 8.65918 3.37305 8.65918 3.91309V7.00293H10.1562C10.4023 7.00293 10.6006 7.1875 10.6006 7.44727C10.6006 7.625 10.5254 7.74805 10.3408 7.93945L7.59961 10.8857C7.46289 11.0225 7.31934 11.0703 7.19629 11.0703Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="desktop_version">
+                      <a
+                        href="/uploads/reports/pdf/1727770689/FS_ARM_IDG 2023.pdf"
+                        target="_blank"
+                      >
+                        <p>Open in Desktop Version</p>
+                        <svg
+                          width="17"
+                          height="14"
+                          viewBox="0 0 17 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.88965 13.3604C1.46094 13.3604 0.743164 12.6562 0.743164 11.248V2.89453C0.743164 1.48633 1.46094 0.775391 2.88965 0.775391H14.7158C16.1514 0.775391 16.8623 1.48633 16.8623 2.89453V11.248C16.8623 12.6562 16.1514 13.3604 14.7158 13.3604H2.88965ZM2.90332 12.2598H14.7021C15.3789 12.2598 15.7617 11.8975 15.7617 11.1865V2.95605C15.7617 2.24512 15.3789 1.87598 14.7021 1.87598H2.90332C2.21973 1.87598 1.84375 2.24512 1.84375 2.95605V11.1865C1.84375 11.8975 2.21973 12.2598 2.90332 12.2598ZM7.22363 10.6328C6.92285 10.6328 6.72461 10.4209 6.72461 10.0996V9.00586L6.82715 7.94629L5.84277 8.99902L3.77832 11.0566C3.68262 11.1523 3.55957 11.2139 3.39551 11.2139C3.08789 11.2139 2.88965 11.0156 2.88965 10.708C2.88965 10.5713 2.95801 10.4346 3.05371 10.3389L5.11816 8.27441L6.18457 7.2832L5.17285 7.39258H4.02441C3.69629 7.39258 3.48438 7.19434 3.48438 6.89355C3.48438 6.59277 3.68945 6.39453 4.01074 6.39453H7.15527C7.50391 6.39453 7.72949 6.55176 7.72949 6.95508V10.0859C7.72949 10.4004 7.52441 10.6328 7.22363 10.6328Z"
+                            fill="#6A6A6A"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide y_2023">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-header">
+                  <span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="6" cy="6" r="6" fill="white" />
+                    </svg>
+                    2023
+                  </span>
+                  <h3>Report</h3>
+                </div>
+                <img
+                  class="card-bg"
+                  src="/uploads/reports/image/1727770886_428faac7d4b860ce2e4a.png"
+                  alt="Report"
+                />
+                <div class="card-footer">
+                  <p>
+                    Annual financial report and independent auditor's report
+                  </p>
+                  <div class="card-footer_reports">
+                    <div class="pdf">
+                      <a
+                        href="/uploads/reports/pdf/1727770886/FS_ARM_IDG 2023.pdf"
+                        download="FS_ARM_IDG 2023.pdf"
+                      >
+                        <p>PDF Report</p>
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.19629 14.0371C3.38867 14.0371 0.223633 10.8721 0.223633 7.06445C0.223633 3.25 3.38184 0.0917969 7.18945 0.0917969C11.0039 0.0917969 14.1689 3.25 14.1689 7.06445C14.1689 10.8721 11.0107 14.0371 7.19629 14.0371ZM7.19629 12.875C10.4229 12.875 13.0068 10.291 13.0068 7.06445C13.0068 3.83789 10.416 1.25391 7.18945 1.25391C3.96289 1.25391 1.39258 3.83789 1.39258 7.06445C1.39258 10.291 3.96973 12.875 7.19629 12.875ZM7.19629 11.0703C7.08008 11.0703 6.92969 11.0225 6.7998 10.8857L4.02441 7.93945C3.86719 7.76855 3.79199 7.61816 3.79199 7.43359C3.79199 7.1875 3.96973 7.00293 4.22266 7.00293H5.7334V3.91309C5.7334 3.37305 6.03418 3.05859 6.56055 3.05859H7.8252C8.35156 3.05859 8.65918 3.37305 8.65918 3.91309V7.00293H10.1562C10.4023 7.00293 10.6006 7.1875 10.6006 7.44727C10.6006 7.625 10.5254 7.74805 10.3408 7.93945L7.59961 10.8857C7.46289 11.0225 7.31934 11.0703 7.19629 11.0703Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="desktop_version">
+                      <a
+                        href="/uploads/reports/pdf/1727770886/FS_ARM_IDG 2023.pdf"
+                        target="_blank"
+                      >
+                        <p>Open in Desktop Version</p>
+                        <svg
+                          width="17"
+                          height="14"
+                          viewBox="0 0 17 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.88965 13.3604C1.46094 13.3604 0.743164 12.6562 0.743164 11.248V2.89453C0.743164 1.48633 1.46094 0.775391 2.88965 0.775391H14.7158C16.1514 0.775391 16.8623 1.48633 16.8623 2.89453V11.248C16.8623 12.6562 16.1514 13.3604 14.7158 13.3604H2.88965ZM2.90332 12.2598H14.7021C15.3789 12.2598 15.7617 11.8975 15.7617 11.1865V2.95605C15.7617 2.24512 15.3789 1.87598 14.7021 1.87598H2.90332C2.21973 1.87598 1.84375 2.24512 1.84375 2.95605V11.1865C1.84375 11.8975 2.21973 12.2598 2.90332 12.2598ZM7.22363 10.6328C6.92285 10.6328 6.72461 10.4209 6.72461 10.0996V9.00586L6.82715 7.94629L5.84277 8.99902L3.77832 11.0566C3.68262 11.1523 3.55957 11.2139 3.39551 11.2139C3.08789 11.2139 2.88965 11.0156 2.88965 10.708C2.88965 10.5713 2.95801 10.4346 3.05371 10.3389L5.11816 8.27441L6.18457 7.2832L5.17285 7.39258H4.02441C3.69629 7.39258 3.48438 7.19434 3.48438 6.89355C3.48438 6.59277 3.68945 6.39453 4.01074 6.39453H7.15527C7.50391 6.39453 7.72949 6.55176 7.72949 6.95508V10.0859C7.72949 10.4004 7.52441 10.6328 7.22363 10.6328Z"
+                            fill="#6A6A6A"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-footer_mobile">
+        <div class="news-filters">
+          <span class="filter active" data-filter="y_2023">2023</span>
+          <span class="underline"></span>
+        </div>
+        <p>Find our company reports here</p>
+      </div>
+    </section>
+
+    <!--jQuery-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        // cssMode: true,
+        // navigation: {
+        //     nextEl: "#nextBtn",
+        //     prevEl: "#prevBtn",
+        // },
+        slidesPerView: 2.3,
+        spaceBetween: 0,
+        loop: false,
+        // pagination: {
+        //     clickable: true,
+        //     mousewheel: true,
+        //     keyboard: true,
+        // },
+        breakpoints: {
+          // when window width is <= 768px
+          320: {
+            slidesPerView: 1.1,
+          },
+          744: {
+            slidesPerView: 2.1,
+          },
+          1366: {
+            slidesPerView: 2.3,
+          },
+        },
+      });
+    </script>
+    <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentYear = new Date().getFullYear(); // Gets the current year
+        document.getElementById('year').textContent = currentYear; // Sets the current year as the text content of the #year element
+    });
+
+    //news
+    $(document).ready(function () {
+        function scrollToFirstElementWithClass(className) {
+            const sliderContainer = $('.slider-container');
+            const firstElement = $(`.card.${className}`).first();
+
+            if (firstElement.length) {
+                const scrollPosition = firstElement.position().left + sliderContainer.scrollLeft() - sliderContainer.position().left;
+                sliderContainer.animate({
+                    scrollLeft: scrollPosition
+                }, 800);
+            }
+        }
+
+        // Filter functionality
+        $('.filter').click(function () {
+            const filter = $(this).data('filter');
+            $('.filter').removeClass('active');
+            $(this).addClass('active');
+
+            if (filter) {
+                scrollToFirstElementWithClass(filter);
+            }
+        });
+    });
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        function moveUnderline() {
+            const activeFilter = $('.filter.active');
+            const underline = $('.underline');
+            underline.css('left', activeFilter.position().left - 10);
+        }
+        moveUnderline();
+
+        $('.filter').click(function () {
+            $(this).addClass('active');
+            moveUnderline();
+        });
+    });
+</script> -->
+
+    <script>
+      $(document).ready(function () {
+        // Function to scroll to the first element of the filtered class
+        function scrollToFirstElementWithClass(className) {
+          const sliderContainer = $(".mySwiper");
+          const firstElement = $(`.swiper-slide.${className}`).first();
+
+          if (firstElement.length) {
+            const scrollPosition =
+              firstElement.offset().left -
+              sliderContainer.offset().left +
+              sliderContainer.scrollLeft();
+            sliderContainer.animate(
+              {
+                scrollLeft: scrollPosition,
+              },
+              800
+            );
+          }
+        }
+
+        // Function to move the underline
+        // function moveUnderline() {
+        //     const activeFilter = $('.filter.active');
+        //     const underline = $('.underline');
+        //     const offset = -10;
+        //     underline.css('left', activeFilter.position().left + offset);
+        // }
+
+        function moveUnderline(initial = true) {
+          const activeFilter = $(".filter.active");
+          const underline = $(".underline");
+          const baseOffset = -10;
+          const windowWidth = $(window).width();
+          // If it's the initial call, set the offset to 15; otherwise, use the base offset
+          const offset = initial && windowWidth < 743 ? 5 : baseOffset;
+          underline.css("left", activeFilter.position().left + offset);
+        }
+
+        // Function to handle the click event on filters
+        $(".filter").click(function () {
+          const filter = $(this).data("filter");
+          $(".filter").removeClass("active"); // Remove 'active' class from all filters
+          $(this).addClass("active"); // Add 'active' class to the clicked filter
+
+          moveUnderline(false); // Move the underline to the active filter
+
+          // Delay the scrolling a bit to wait for possible reflows
+          setTimeout(function () {
+            if (filter) {
+              scrollToFirstElementWithClass(filter); // Scroll to the first element with the filter class
+            }
+          }, 200); // This timeout value may need to be adjusted based on your content's behavior
+        });
+
+        // Initial call to set the underline position
+        moveUnderline();
+      });
+    </script>
+
+    <script>
+      $(".click_here").click(function () {
+        $(this).addClass("success_click_here");
+      });
+      document
+        .querySelector(".nav_lang")
+        .addEventListener("click", function () {
+          var english = document.querySelector(".language-text.english");
+          var armenian = document.querySelector(".language-text.armenian");
+
+          if (english.classList.contains("active")) {
+            english.classList.remove("active");
+            english.classList.add("inactive");
+            armenian.classList.remove("inactive");
+            armenian.classList.add("active");
+          } else {
+            armenian.classList.remove("active");
+            armenian.classList.add("inactive");
+            english.classList.remove("inactive");
+            english.classList.add("active");
+          }
+        });
+    </script>
+  </body>
+</html>
