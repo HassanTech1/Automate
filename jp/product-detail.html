@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>製品詳細 - Ubertrix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cursor -->
+  <div id="cursor" class="cursor-glow"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="index.html" class="logo">
+          <img src="img/logo-removebg-preview (1).png" height="40" width="50"/>
+          <span class="logo-text">Uber<span class="logo-text-white">trix</span></span>
+        </a>
+        
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">ホーム</a>
+          <a href="products.html" class="active">製品</a>
+          <a href="about.html">会社概要</a>
+          <a href="blog.html">ブログ</a>
+          <a href="contact.html">お問い合わせ</a>
+          <a href="contact.html" class="cta-button">始める</a>
+        </div>
+        
+        <button id="menu-toggle" class="menu-toggle">
+          <svg class="menu-icon" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="close-icon" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">ホーム</a>
+        <a href="products.html" class="active">製品</a>
+        <a href="about.html">会社概要</a>
+        <a href="blog.html">ブログ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html" class="mobile-cta">始める</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Detail Hero -->
+  <section class="product-hero" id="product-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">ホーム</a>
+        <span class="separator">/</span>
+        <a href="products.html">製品</a>
+        <span class="separator">/</span>
+        <span id="product-breadcrumb">製品詳細</span>
+      </div>
+      
+      <div class="product-hero-content">
+        <div class="product-hero-info">
+          <div id="product-icon" class="product-hero-icon">
+            <!-- Icon will be inserted by JavaScript -->
+          </div>
+          <h1 id="product-title" class="product-hero-title">製品名</h1>
+          <p id="product-description" class="product-hero-description">製品の説明は動的に読み込まれます。</p>
+          <div class="product-hero-actions">
+            <a href="contact.html" class="primary-button">デモを依頼</a>
+            <a href="#pricing" class="secondary-button">料金を見る</a>
+          </div>
+        </div>
+        <div class="product-hero-image">
+          <img id="product-image" src="img/ai-analytics.png" alt="Product">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="product-features">
+    <div class="container">
+      <h2 class="section-title">主な <span class="gradient-text">特徴</span></h2>
+      
+      <div class="features-list" id="product-features">
+        <!-- Features will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">柔軟な <span class="gradient-text">料金プラン</span></h2>
+      
+      <div class="pricing-tabs">
+        <button class="pricing-tab active" id="monthly-tab">月額</button>
+        <button class="pricing-tab" id="yearly-tab">年額 <span class="discount">10%お得</span></button>
+      </div>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3>プロフェッショナル</h3>
+            <div class="pricing-amount">
+              <div class="monthly-price" id="starter-monthly-price">$0</div>
+              <div class="yearly-price hidden" id="starter-yearly-price">$0</div>
+              <span class="pricing-period">/月</span>
+            </div>
+            <p>これから始める個人向け</p>
+          </div>
+          
+          <div class="pricing-card-features">
+            <ul>
+              <li>基本機能の限定利用</li>
+              <li>20ユーザーアカウント</li>
+              <li>コミュニティサポート</li>
+            </ul>
+          </div>
+          
+          <div class="pricing-card-action">
+            <a href="#" class="secondary-button">無料トライアル開始</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card featured">
+          <div class="pricing-badge">人気</div>
+          <div class="pricing-card-header">
+            <h3>プレミアム</h3>
+            <div class="pricing-amount">
+              <div class="monthly-price" id="pro-monthly-price">$0</div>
+              <div class="yearly-price hidden" id="pro-yearly-price">$0</div>
+              <span class="pricing-period">/月</span>
+            </div>
+            <p>小規模チームやプロ向け</p>
+          </div>
+          
+          <div class="pricing-card-features">
+            <ul>
+              <li>全ての基本機能</li>
+              <li>50ユーザーアカウント</li>
+              <li>指紋認証、OAuth、RFID</li>
+              <li>SMS & メールAPI</li>
+              <li>AI分析</li>
+              <li>APIアクセス</li>
+            </ul>
+          </div>
+          
+          <div class="pricing-card-action">
+            <a href="#" class="primary-button">無料トライアル開始</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3>アンリミテッド</h3>
+            <div class="pricing-amount">
+              <span class="custom-price" id="enterprise-label">カスタム</span>
+            </div>
+            <p>大規模組織向け</p>
+          </div>
+          
+          <div class="pricing-card-features">
+            <ul>
+              <li>全てのプロフェッショナル機能</li>
+              <li>無制限ユーザー</li>
+              <li>24時間365日専用サポート</li>
+              <li>カスタム連携</li>
+              <li>オンプレミス導入</li>
+              <li>SLA保証</li>
+            </ul>
+          </div>
+          
+          <div class="pricing-card-action">
+            <a href="contact.html" class="secondary-button">営業に問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">お客様の <span class="gradient-text">声</span></h2>
+      
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>「UbertrixのAI分析プラットフォームで顧客データの解釈が一変しました。得られたインサイトにより顧客維持率が35%向上しました。」</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="img/avatar1.jpg" alt="Sarah Johnson">
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <p>CTO, TechGrowth Inc.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>「NLPエンジンでカスタマーサービスが革新されました。毎日数千件の顧客対応を効率的に分析し、問題を早期発見できています。」</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="img/avatar2.jpg" alt="Michael Chen">
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <p>COO, ServiceFirst</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>「Ubertrixのコンピュータビジョンプラットフォーム導入で製造工程の品質管理問題が72%減少。ROIは四半期内に実感できました。」</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="img/avatar3.jpg" alt="Elena Rodriguez">
+              <div class="author-info">
+                <h4>Elena Rodriguez</h4>
+                <p>VP of Operations, PrecisionMfg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-controls">
+          <button id="prev-testimonial" aria-label="前の声">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div class="testimonial-dots" id="testimonial-dots">
+            <span class="testimonial-dot active"></span>
+            <span class="testimonial-dot"></span>
+            <span class="testimonial-dot"></span>
+          </div>
+          <button id="next-testimonial" aria-label="次の声">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">よくある <span class="gradient-text">質問</span></h2>
+      
+      <div class="faq-list" id="product-faqs">
+        <div class="faq-item">
+          <div class="faq-question">
+            導入には通常どれくらいかかりますか？
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>導入期間はご要望や既存インフラの複雑さによって異なりますが、通常2〜4週間で稼働開始できます。専任の導入チームが貴社IT部門と連携し、スムーズな移行をサポートします。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            業界ごとのカスタマイズは可能ですか？
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>はい。医療、金融、製造、小売など各業界向けのカスタマイズが可能です。多様な業界知識を活かし、業界特有の課題やコンプライアンス要件に合わせてご提案します。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            プラットフォームのセキュリティはどうなっていますか？
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>セキュリティは最優先事項です。エンドツーエンド暗号化、多要素認証、定期的なセキュリティ監査など、エンタープライズレベルの対策を実施。GDPR、HIPAA、SOC2など各種基準にも準拠しています。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            どのようなサポートがありますか？
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>ご契約プランに応じたサポートをご用意。全プランでナレッジベースとコミュニティフォーラム利用可。プロフェッショナルプランは24時間以内の優先メールサポート、エンタープライズは専任担当と24時間365日サポートを提供します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>ビジネス変革の準備はできていますか？</h2>
+      <p>すでに多くの企業が当社AIソリューションで成長と効率化を実現しています。</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="primary-button">今すぐ始める</a>
+        <a href="about.html" class="secondary-button">会社について詳しく</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <a href="index.html" class="footer-logo">
+            
+            <span class="logo-text">Uber<span class="logo-text-white">trix</span></span>
+          </a>
+          <p>最先端AIソリューションでビジネスを変革。革新的なソフトウェアで成長と効率化の新たな可能性を切り拓きます。</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/ubertrix" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/Ubertrix" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/ubertrix.ai/" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>会社情報</h3>
+            <ul>
+              <li><a href="about.html">会社概要</a></li>
+              <li><a href="careers.html">採用情報</a></li>
+              <li><a href="blog.html">ブログ</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <!--
+          <div class="footer-column">
+            <h3>Products</h3>
+            <ul>
+              <li><a href="products.html">AI Solutions</a></li>
+              <li><a href="products.html#data-analytics">Data Analytics</a></li>
+              <li><a href="products.html#machine-learning">Machine Learning</a></li>
+              <li><a href="products.html#automation">Automation</a></li>
+            </ul>
+          </div>
+        -->
+          <div class="footer-column">
+            <h3>法的情報</h3>
+            <ul>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
+              <li><a href="cookies.html">クッキーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; <span id="year"></span> Ubertrix. 無断転載を禁じます。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/productDetail.js"></script>
+</body>
+</html>
