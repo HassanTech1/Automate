@@ -178,9 +178,11 @@ class ChatApp {
     }
 
     async callGeminiAPI(userMessage) {
-        // Call local backend proxy instead of Gemini directly
+        // IMPORTANT: Replace this URL with your deployed backend endpoint after deployment!
+        // Example: const GEMINI_BACKEND_URL = 'https://your-gemini-backend.onrender.com/api/gemini';
+        const GEMINI_BACKEND_URL = 'https://YOUR-BACKEND-URL/api/gemini'; // <-- CHANGE THIS after deploying your backend
         try {
-            const response = await fetch('http://localhost:3001/api/gemini', {
+            const response = await fetch(GEMINI_BACKEND_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: userMessage })
