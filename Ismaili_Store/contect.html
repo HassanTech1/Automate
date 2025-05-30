@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تقديم البرنامج - البداية جلوبال</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f7f7f7; direction: rtl; }
+    .container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { text-align: center; color: #2b2b2b; }
+    label { display: block; margin: 16px 0 6px; color: #444; font-weight: 500; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
+    button { margin-top: 20px; width: 100%; background: #1e88e5; color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #1565c0; }
+    .success { color: #388e3c; text-align: center; margin-top: 16px; }
+    .error { color: #d32f2f; text-align: center; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>تقديم البرنامج</h1>
+    <form id="programForm">
+      <label for="name">اسم البرنامج</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="desc">وصف البرنامج</label>
+      <textarea id="desc" name="desc" rows="4" required></textarea>
+
+      <label for="email">البريد الإلكتروني للتواصل</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">رقم الهاتف</label>
+      <input type="tel" id="phone" name="phone">
+
+      <button type="submit">إرسال</button>
+      <div id="msg"></div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('programForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const desc = document.getElementById('desc').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const msg = document.getElementById('msg');
+      msg.textContent = '';
+      // Compose WhatsApp message
+      const waNumber = '+966569685664'; // Replace with your WhatsApp number (country code, no +)
+      const waText =
+        `اسم البرنامج: ${name}%0A` +
+        `وصف البرنامج: ${desc}%0A` +
+        `البريد الإلكتروني: ${email}%0A` +
+        `رقم الهاتف: ${phone}`;
+      const waUrl = `https://wa.me/${waNumber}?text=${waText}`;
+      window.open(waUrl, '_blank');
+      msg.textContent = 'سيتم تحويلك إلى واتساب لإرسال البيانات.';
+      msg.className = 'success';
+      document.getElementById('programForm').reset();
+    });
+  </script>
+</body>
+</html>
