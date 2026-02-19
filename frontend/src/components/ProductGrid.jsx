@@ -30,11 +30,6 @@ const ProductGrid = ({ products }) => {
                 <p className="text-base text-black font-semibold">
                   {product.price}.00 SAR
                 </p>
-                {product.isNew && (
-                  <p className="text-sm text-gray-400 line-through">
-                    {(product.price * 1.2).toFixed(2)} SAR
-                  </p>
-                )}
               </div>
               <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
                 Add to Cart
@@ -70,11 +65,6 @@ const ProductGrid = ({ products }) => {
                   <p className="text-base text-black font-semibold">
                     {product.price}.00 SAR
                   </p>
-                  {product.isNew && (
-                    <p className="text-sm text-gray-400 line-through">
-                      {(product.price * 1.2).toFixed(2)} SAR
-                    </p>
-                  )}
                 </div>
                 <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
                   Add to Cart
